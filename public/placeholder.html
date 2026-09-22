@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Home | Bayo Abdulai Badmus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+            href="index.html"
+            class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            <img
+              src="./assets/images/bayo-mark.svg"
+              alt=""
+              class="h-5 w-5"
+            >
+          
+            <span>Bayo.</span>
+          </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="index.html" class="text-purple-600 dark:text-purple-400">Home</a>
+          <a href="about.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Work</a>
+          <a href="resume.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[9px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              ☼
+            </span>
+          </button>
+
+          <a
+            href="#contact"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+        FOOTER
+  ========================================================== -->
+
+  <footer class="bg-[#5420ff] py-10 text-white">
+
+    <div class="container-site">
+
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+
+        <div>
+          <h2 class="text-lg font-bold">Bayo.</h2>
+
+          <p class="mt-3 max-w-xs text-xs leading-5 text-white/70">
+            Product designer focused on creating meaningful digital
+            experiences.
+          </p>
+
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">in</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">𝕏</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">◎</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Navigation</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Services</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <span>UI/UX Design</span>
+            <span>Product Design</span>
+            <span>Design Systems</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Contact</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="mailto:badmusabdulaibayo@gmail.com">badmusabdulaibayo@gmail.com</a>
+            <span>Abuja, Nigeria</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        © 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+  
+  <script src="./js/theme.js"></script>
+
+</body>
+</html>

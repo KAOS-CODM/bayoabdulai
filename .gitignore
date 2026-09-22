@@ -1,0 +1,7 @@
+tailwind-workspace/node_modules/
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example

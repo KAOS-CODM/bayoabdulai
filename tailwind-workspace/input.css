@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@source "../public/*.html";
+@source "../public/*.js";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --color-brand-50: #f5f1ff;
+  --color-brand-100: #ebe3ff;
+  --color-brand-200: #d8c9ff;
+  --color-brand-300: #bca4f2;
+  --color-brand-400: #9a76dc;
+  --color-brand-500: #8058cf;
+  --color-brand-600: #7043c6;
+  --color-brand-700: #6235b5;
+  --color-brand-800: #4e2a92;
+  --color-brand-900: #3b2070;
+
+  --color-purple-main: #5620ff;
+  --color-purple-bright: #6828ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #8058cf;
+  color: white;
+}
+
+.container-site {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: 72px;
+}
+
+@media (max-width: 768px) {
+  .section-space {
+    padding-block: 48px;
+  }
+}
+
+.soft-card {
+  border: 1px solid rgba(128, 88, 207, 0.12);
+  box-shadow: 0 8px 30px rgba(82, 48, 140, 0.05);
+}
+
+.gradient-purple {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(255,255,255,.2), transparent 25%),
+    linear-gradient(135deg, #8060cf, #7652c8);
+}

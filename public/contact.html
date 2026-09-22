@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact | Bayo Abdulai Badmus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- =========================================================
+       ICON SPRITE
+  ========================================================== -->
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m22 2-7 20-4-9-9-4Z"/>
+      <path d="M22 2 11 13"/>
+    </symbol>
+
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </symbol>
+
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+      <circle cx="9" cy="7" r="4"/>
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+    </symbol>
+
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </symbol>
+
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="m22 6-10 7L2 6"/>
+    </symbol>
+
+    <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.59 13.41 12 22l-8.59-8.59A2 2 0 0 1 3 12V4a1 1 0 0 1 1-1h8a2 2 0 0 1 1.41.59l7.18 7.18a2 2 0 0 1 0 2.83Z"/>
+      <circle cx="7.5" cy="7.5" r=".6" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 20h9"/>
+      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+    </symbol>
+
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.6A6 6 0 0 1 16 8Z"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </symbol>
+
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </symbol>
+
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </symbol>
+
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/>
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+    </symbol>
+
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </symbol>
+
+  </svg>
+
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+            href="index.html"
+            class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            <img
+              src="./assets/images/bayo-mark.svg"
+              alt=""
+              class="h-5 w-5"
+            >
+
+            <span>Bayo.</span>
+          </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="index.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Work</a>
+          <a href="resume.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="text-purple-600 dark:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[9px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              ☼
+            </span>
+          </button>
+
+          <a
+            href="#contact"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO + CONTACT FORM
+    ========================================================== -->
+
+    <section id="contact" class="bg-[#eee9ff] pt-28 pb-14 dark:bg-[#211d2d]">
+
+      <div class="container-site">
+
+        <div class="grid items-start gap-10 lg:grid-cols-[1.05fr_.95fr]">
+
+          <!-- Hero copy -->
+          <div class="pt-2">
+
+            <h1 class="max-w-xl text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[44px]">
+              Let's Build Something Meaningful
+              <span class="text-[#5420ff] dark:text-[#8b7bff]">
+                Together.
+              </span>
+            </h1>
+
+            <p class="mt-5 max-w-lg text-sm leading-6 text-slate-600 dark:text-slate-300">
+              Have a project in mind, a question, or just want to say
+              hello? I'd love to hear from you.
+            </p>
+
+            <!-- Highlights -->
+            <ul class="mt-8 space-y-5">
+
+              <li class="flex gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e2daff] text-[#5420ff] dark:bg-[#352e47] dark:text-[#8b7bff]">
+                  <svg class="h-5 w-5"><use href="#i-send"/></svg>
+                </span>
+                <div>
+                  <p class="text-sm font-bold">Quick Response</p>
+                  <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                    I usually respond within 24 hours.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e2daff] text-[#5420ff] dark:bg-[#352e47] dark:text-[#8b7bff]">
+                  <svg class="h-5 w-5"><use href="#i-check"/></svg>
+                </span>
+                <div>
+                  <p class="text-sm font-bold">Open to Opportunities</p>
+                  <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                    Available for full-time, freelance and contract projects.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#e2daff] text-[#5420ff] dark:bg-[#352e47] dark:text-[#8b7bff]">
+                  <svg class="h-5 w-5"><use href="#i-users"/></svg>
+                </span>
+                <div>
+                  <p class="text-sm font-bold">Let's Collaborate</p>
+                  <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                    I'm excited to work on meaningful and impactful ideas.
+                  </p>
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- Form card -->
+          <div
+            class="relative overflow-hidden rounded-[28px] p-6 shadow-xl
+                   bg-linear-to-br from-[#dcd8ef] via-[#cdc4e9] to-[#eae0d6]
+                   dark:from-[#2f2942] dark:via-[#38304f] dark:to-[#2c2640]
+                   sm:p-8"
+          >
+
+            <!-- Decorative blobs -->
+            <div class="pointer-events-none absolute -left-10 top-28 h-40 w-40 rounded-full bg-[#5b4bf5]/35 blur-2xl"></div>
+            <div class="pointer-events-none absolute right-2 top-24 h-36 w-36 rounded-full bg-[#ff5fa2]/30 blur-2xl"></div>
+            <div class="pointer-events-none absolute left-24 bottom-24 h-32 w-32 rounded-full bg-[#ffb35c]/40 blur-2xl"></div>
+            <div class="pointer-events-none absolute -right-8 bottom-10 h-36 w-36 rounded-full bg-[#4ac8ff]/35 blur-2xl"></div>
+
+            <div class="relative z-10">
+
+              <h2 class="text-xl font-extrabold tracking-tight">
+                Send Me a Message
+              </h2>
+
+              <p class="mt-2 max-w-sm text-xs leading-5 text-slate-600 dark:text-slate-300">
+                Fill out the form below and I'll get back to you as soon
+                as possible.
+              </p>
+
+              <form id="contactForm" class="mt-6 space-y-3">
+
+                <!-- Name -->
+                <label class="relative block">
+                  <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <svg class="h-4 w-4"><use href="#i-user"/></svg>
+                  </span>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                    class="h-12 w-full rounded-full bg-white pl-11 pr-4 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#5420ff]/40"
+                  >
+                </label>
+
+                <!-- Email -->
+                <label class="relative block">
+                  <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <svg class="h-4 w-4"><use href="#i-mail"/></svg>
+                  </span>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    required
+                    class="h-12 w-full rounded-full bg-white pl-11 pr-4 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#5420ff]/40"
+                  >
+                </label>
+
+                <!-- Subject -->
+                <label class="relative block">
+                  <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <svg class="h-4 w-4"><use href="#i-tag"/></svg>
+                  </span>
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                    class="h-12 w-full rounded-full bg-white pl-11 pr-4 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#5420ff]/40"
+                  >
+                </label>
+
+                <!-- Message -->
+                <label class="relative block">
+                  <span class="pointer-events-none absolute left-4 top-4 text-slate-400">
+                    <svg class="h-4 w-4"><use href="#i-edit"/></svg>
+                  </span>
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                    class="min-h-18 w-full resize-none rounded-3xl bg-white pl-11 pr-4 pt-4 text-sm text-slate-800 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-[#5420ff]/40"
+                  ></textarea>
+                </label>
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  class="flex w-full items-center justify-center gap-2 rounded-full bg-[#5420ff] py-3.5 text-sm font-semibold text-white transition hover:bg-[#4516d6]"
+                >
+                  Send Message
+                  <svg class="h-4 w-4"><use href="#i-send"/></svg>
+                </button>
+
+                <p id="formNote" class="hidden pt-1 text-center text-xs font-medium text-white">
+                  Thanks! Your message has been sent — I'll reply soon.
+                </p>
+
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         OTHER WAYS TO CONNECT
+    ========================================================== -->
+
+    <section class="bg-white pt-14 pb-8 dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <h2 class="text-2xl font-bold">
+          Other Ways to Connect
+        </h2>
+
+        <div class="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          <!-- Email -->
+          <a
+            href="mailto:badmusabdulaibayo@gmail.com"
+            class="rounded-2xl border border-slate-200 bg-white p-6 text-center transition hover:border-[#5420ff]/40 hover:shadow-sm dark:border-slate-800 dark:bg-[#1b1824]"
+          >
+            <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+              <svg class="h-5 w-5"><use href="#i-mail"/></svg>
+            </span>
+
+            <p class="mt-4 text-sm font-bold">Email</p>
+
+            <p class="mt-2 break-all text-xs text-slate-500 dark:text-slate-400">
+              badmusabdulaibayo@gmail.com
+            </p>
+
+            <p class="mt-4 text-xs font-semibold text-[#5420ff] dark:text-[#8b7bff]">
+              Best way to reach me
+            </p>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://linkedin.com/in/bayoabdulai"
+            target="_blank"
+            rel="noopener"
+            class="rounded-2xl border border-slate-200 bg-white p-6 text-center transition hover:border-[#5420ff]/40 hover:shadow-sm dark:border-slate-800 dark:bg-[#1b1824]"
+          >
+            <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+              <svg class="h-5 w-5"><use href="#i-linkedin"/></svg>
+            </span>
+
+            <p class="mt-4 text-sm font-bold">LinkedIn</p>
+
+            <p class="mt-2 break-all text-xs text-slate-500 underline decoration-slate-300 underline-offset-2 dark:text-slate-400">
+              linkedin.com/in/bayoabdulai
+            </p>
+
+            <p class="mt-4 text-xs font-semibold text-[#5420ff] dark:text-[#8b7bff]">
+              Let's connect professionally
+            </p>
+          </a>
+
+          <!-- Location -->
+          <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center dark:border-slate-800 dark:bg-[#1b1824]">
+            <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+              <svg class="h-5 w-5"><use href="#i-pin"/></svg>
+            </span>
+
+            <p class="mt-4 text-sm font-bold">Location</p>
+
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+              Abuja, Nigeria
+            </p>
+
+            <p class="mt-4 text-xs font-semibold text-[#5420ff] dark:text-[#8b7bff]">
+              Open to remote &amp; onsite
+            </p>
+          </div>
+
+          <!-- Schedule -->
+          <a
+            href="#contact"
+            class="rounded-2xl border border-slate-200 bg-white p-6 text-center transition hover:border-[#5420ff]/40 hover:shadow-sm dark:border-slate-800 dark:bg-[#1b1824]"
+          >
+            <span class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+              <svg class="h-5 w-5"><use href="#i-calendar"/></svg>
+            </span>
+
+            <p class="mt-4 text-sm font-bold">Schedule a Meeting</p>
+
+            <p class="mt-2 text-xs text-slate-500 dark:text-slate-400">
+              Book a 30-min discovery call
+            </p>
+
+            <p class="mt-4 text-xs font-semibold text-[#5420ff] dark:text-[#8b7bff]">
+              Let's talk about your project
+            </p>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         MAP
+    ========================================================== -->
+
+    <section class="bg-white pb-16 dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <div class="flex flex-col items-center gap-4 lg:flex-row lg:items-center">
+
+          <!-- Floating location card -->
+          <div class="relative z-10 w-full max-w-xs rounded-2xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-[#1b1824] lg:-mr-10 lg:shrink-0">
+
+            <div class="flex gap-3">
+              <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+                <svg class="h-4 w-4"><use href="#i-pin"/></svg>
+              </span>
+
+              <div>
+                <p class="text-xs font-bold">Based in Abuja, Nigeria</p>
+                <p class="mt-1 text-[11px] leading-4 text-slate-500 dark:text-slate-400">
+                  Available for projects worldwide.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Map -->
+          <div class="relative w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
+
+            <iframe
+              src="https://www.google.com/maps?q=Abuja,+Nigeria&z=13&output=embed"
+              title="Map of Abuja, Nigeria"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="h-64 w-full border-0 sm:h-72 lg:h-80"
+              style="border:0"
+            ></iframe>
+
+            <!-- Map labels -->
+            <span class="pointer-events-none absolute left-[4%] top-[42%] max-w-23 rounded bg-white px-2 py-1 text-center text-[9px] font-medium leading-tight text-slate-700 shadow-sm">
+              Nigerian National Petroleum Corporation
+            </span>
+
+            <span class="pointer-events-none absolute right-[5%] top-[7%] rounded bg-white px-2 py-1 text-[9px] font-medium text-slate-700 shadow-sm">
+              Transcorp Hilton Hotel
+            </span>
+
+            <span class="pointer-events-none absolute left-[47%] top-[58%] rounded bg-white px-2 py-1 text-[9px] font-medium text-slate-700 shadow-sm">
+              Central Business District
+            </span>
+
+            <span class="pointer-events-none absolute bottom-[6%] right-[3%] rounded bg-white px-2 py-1 text-[9px] font-medium text-slate-700 shadow-sm">
+              Federal Secretariat
+            </span>
+
+            <!-- Pin -->
+            <span class="pointer-events-none absolute bottom-[16%] left-[38%] flex h-9 w-9 items-center justify-center rounded-full bg-[#5420ff] text-white shadow-lg ring-4 ring-[#5420ff]/25">
+              <svg class="h-4 w-4"><use href="#i-pin"/></svg>
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         FAQ
+    ========================================================== -->
+
+    <section class="bg-white pb-20 dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
+
+          <!-- Accordion -->
+          <div>
+
+            <h2 class="mb-7 text-2xl font-bold">
+              Frequently Asked Questions
+            </h2>
+
+            <div class="space-y-4">
+
+              <!-- Item 1 (open) -->
+              <div class="faq-item rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-[#1b1824]">
+                <button type="button" class="faq-trigger flex w-full items-start gap-4 p-5 text-left">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+                    <svg class="h-4 w-4"><use href="#i-chat"/></svg>
+                  </span>
+
+                  <span class="min-w-0 flex-1">
+                    <span class="flex items-center justify-between gap-4">
+                      <span class="text-sm font-bold">What types of projects do you work on?</span>
+                      <svg class="faq-chevron h-4 w-4 shrink-0 rotate-180 text-slate-400 transition-transform"><use href="#i-chevron"/></svg>
+                    </span>
+
+                    <span class="faq-answer mt-2 block">
+                      <span class="block text-xs leading-6 text-slate-500 dark:text-slate-400">
+                        I work on a wide range of projects including mobile apps,
+                        web applications, dashboards, enterprise systems, and redesigns.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="faq-item rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-[#1b1824]">
+                <button type="button" class="faq-trigger flex w-full items-start gap-4 p-5 text-left">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+                    <svg class="h-4 w-4"><use href="#i-briefcase"/></svg>
+                  </span>
+
+                  <span class="min-w-0 flex-1">
+                    <span class="flex items-center justify-between gap-4">
+                      <span class="text-sm font-bold">Are you available for full-time roles?</span>
+                      <svg class="faq-chevron h-4 w-4 shrink-0 text-slate-400 transition-transform"><use href="#i-chevron"/></svg>
+                    </span>
+
+                    <span class="faq-answer mt-2 hidden block">
+                      <span class="block text-xs leading-6 text-slate-500 dark:text-slate-400">
+                        Yes. I'm open to full-time, freelance and contract
+                        opportunities — reach out and we'll figure out what works.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="faq-item rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-[#1b1824]">
+                <button type="button" class="faq-trigger flex w-full items-start gap-4 p-5 text-left">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+                    <svg class="h-4 w-4"><use href="#i-users"/></svg>
+                  </span>
+
+                  <span class="min-w-0 flex-1">
+                    <span class="flex items-center justify-between gap-4">
+                      <span class="text-sm font-bold">Do you work with teams or individuals?</span>
+                      <svg class="faq-chevron h-4 w-4 shrink-0 text-slate-400 transition-transform"><use href="#i-chevron"/></svg>
+                    </span>
+
+                    <span class="faq-answer mt-2 hidden block">
+                      <span class="block text-xs leading-6 text-slate-500 dark:text-slate-400">
+                        Both. I collaborate closely with product teams, developers
+                        and stakeholders, as well as founders one-to-one.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="faq-item rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-[#1b1824]">
+                <button type="button" class="faq-trigger flex w-full items-start gap-4 p-5 text-left">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+                    <svg class="h-4 w-4"><use href="#i-clock"/></svg>
+                  </span>
+
+                  <span class="min-w-0 flex-1">
+                    <span class="flex items-center justify-between gap-4">
+                      <span class="text-sm font-bold">What is your typical project timeline?</span>
+                      <svg class="faq-chevron h-4 w-4 shrink-0 text-slate-400 transition-transform"><use href="#i-chevron"/></svg>
+                    </span>
+
+                    <span class="faq-answer mt-2 hidden block">
+                      <span class="block text-xs leading-6 text-slate-500 dark:text-slate-400">
+                        It depends on scope, but most projects take between
+                        2 and 6 weeks from research to final handoff.
+                      </span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- Side card -->
+          <div class="rounded-3xl border border-slate-200 bg-white p-7 text-center dark:border-slate-800 dark:bg-[#1b1824]">
+
+            <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#eee9ff] text-[#5420ff] dark:bg-[#302a40] dark:text-[#8b7bff]">
+              <svg class="h-7 w-7"><use href="#i-mail"/></svg>
+            </span>
+
+            <h3 class="mt-5 text-sm font-bold">
+              Don't see your question here?
+            </h3>
+
+            <p class="mt-2 text-xs leading-5 text-slate-500 dark:text-slate-400">
+              Feel free to send me a message and I'll be happy to help.
+            </p>
+
+            <a
+              href="#contact"
+              class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-[#5420ff] px-5 py-2.5 text-xs font-semibold text-[#5420ff] transition hover:bg-[#5420ff] hover:text-white dark:border-[#8b7bff] dark:text-[#8b7bff] dark:hover:bg-[#8b7bff] dark:hover:text-[#111018]"
+            >
+              Send a Message ↗
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer class="bg-[#5420ff] py-10 text-white">
+
+    <div class="container-site">
+
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+
+        <div>
+          <h2 class="text-lg font-bold">Bayo.</h2>
+
+          <p class="mt-3 max-w-xs text-xs leading-5 text-white/70">
+            Product designer focused on creating meaningful digital
+            experiences.
+          </p>
+
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">in</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">𝕏</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">◎</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Navigation</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Services</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <span>UI/UX Design</span>
+            <span>Product Design</span>
+            <span>Design Systems</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Contact</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="mailto:badmusabdulaibayo@gmail.com">badmusabdulaibayo@gmail.com</a>
+            <span>Abuja, Nigeria</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        © 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Theme + page interactions -->
+  <script>
+    // FAQ accordion (single open)
+    document.querySelectorAll(".faq-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        const answer = item?.querySelector(".faq-answer");
+        const chevron = btn.querySelector(".faq-chevron");
+        if (!answer) return;
+
+        const isOpen = !answer.classList.contains("hidden");
+
+        document.querySelectorAll(".faq-answer").forEach((a) => a.classList.add("hidden"));
+        document.querySelectorAll(".faq-chevron").forEach((c) => c.classList.remove("rotate-180"));
+
+        if (!isOpen) {
+          answer.classList.remove("hidden");
+          chevron?.classList.add("rotate-180");
+        }
+      });
+    });
+
+    // Contact form (demo — no backend yet)
+    document.getElementById("contactForm")?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      document.getElementById("formNote")?.classList.remove("hidden");
+      e.target.reset();
+    });
+  </script>
+  <script src="./js/theme.js"></script>
+
+</body>
+</html>

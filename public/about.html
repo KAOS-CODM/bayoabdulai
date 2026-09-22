@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | Bayo Abdulai Badmus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+            href="index.html"
+            class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            <img
+              src="./assets/images/bayo-mark.svg"
+              alt=""
+              class="h-5 w-5"
+            >
+          
+            <span>Bayo.</span>
+          </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="index.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="text-purple-600 dark:text-purple-400">About</a>
+          <a href="work.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Work</a>
+          <a href="resume.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[9px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              ☼
+            </span>
+          </button>
+
+          <a
+            href="#contact"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ABOUT HERO -->
+
+    <section class="bg-[#eee9ff] pt-28 pb-12 dark:bg-[#211d2d]">
+
+      <div class="container-site">
+
+        <div class="grid items-center gap-8 lg:grid-cols-[1.2fr_.8fr]">
+
+          <div>
+
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-600">
+              About Me
+            </p>
+
+            <h1 class="mt-3 max-w-xl text-3xl font-extrabold leading-tight sm:text-4xl">
+
+              I'm Bayo Abdulai Badmus,
+              <span class="text-purple-600">
+                a Product Designer (UI/UX).
+              </span>
+
+            </h1>
+
+            <p class="mt-5 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
+              I create thoughtful digital experiences by combining
+              research, strategy and visual design to solve meaningful
+              problems.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="rounded-full bg-white px-3 py-1.5 text-[9px] text-slate-600 dark:bg-[#302a40] dark:text-slate-300">
+                Product Design
+              </span>
+
+              <span class="rounded-full bg-white px-3 py-1.5 text-[9px] text-slate-600 dark:bg-[#302a40] dark:text-slate-300">
+                UI/UX
+              </span>
+
+              <span class="rounded-full bg-white px-3 py-1.5 text-[9px] text-slate-600 dark:bg-[#302a40] dark:text-slate-300">
+                Design Systems
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Portrait -->
+
+          <div class="flex justify-center lg:justify-end">
+
+            <div class="relative">
+
+              <div class="absolute -inset-5 rounded-full bg-white/40 blur-xl"></div>
+
+              <div class="relative w-56 overflow-hidden rounded-[30px] bg-white p-2 shadow-xl dark:bg-[#2a2538]">
+
+                <img
+                  src="./assets/images/profile-1.png"
+                  alt="Bayo Abdulai Badmus"
+                  class="aspect-4/5 w-full rounded-[23px] object-cover"
+                >
+
+                <div class="p-3">
+                  <p class="text-xs font-bold">
+                    Bayo Abdulai Badmus
+                  </p>
+
+                  <p class="mt-1 text-[9px] text-slate-500">
+                    Product Designer
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- BIO -->
+
+    <section class="section-space bg-white dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <div class="rounded-3xl bg-[#eee9ff] p-7 dark:bg-[#211d2d] md:p-10">
+
+          <div class="grid gap-10 lg:grid-cols-[1.2fr_.8fr]">
+
+            <div>
+
+              <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-600">
+                My Story
+              </p>
+
+              <h2 class="mt-3 text-2xl font-bold">
+                Designing with purpose
+              </h2>
+
+              <p class="mt-5 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I am passionate about creating products that feel simple,
+                useful and human. My work starts with understanding the
+                problem before jumping into visual solutions.
+              </p>
+
+              <p class="mt-4 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I enjoy working across research, wireframing, prototyping,
+                interface design and design systems while collaborating
+                closely with developers and stakeholders.
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <h3 class="text-sm font-bold">
+                What I bring
+              </h3>
+
+              <ul class="mt-5 space-y-4 text-xs">
+
+                <li class="flex gap-3">
+                  <span class="text-purple-600">✓</span>
+                  <span>User-centered thinking</span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span class="text-purple-600">✓</span>
+                  <span>Strong visual design</span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span class="text-purple-600">✓</span>
+                  <span>Clear communication</span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span class="text-purple-600">✓</span>
+                  <span>Product thinking</span>
+                </li>
+
+                <li class="flex gap-3">
+                  <span class="text-purple-600">✓</span>
+                  <span>Design systems</span>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="bg-[#b39ce2] py-14 dark:bg-[#29223b]">
+
+      <div class="container-site">
+
+        <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+
+          <div>
+
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-900 dark:text-purple-300">
+              Experience
+            </p>
+
+            <h2 class="mt-3 text-2xl font-bold">
+              My professional journey
+            </h2>
+
+          </div>
+
+
+          <div class="space-y-6">
+
+            <article class="border-b border-white/30 pb-5">
+              <div class="flex flex-wrap justify-between gap-3">
+                <h3 class="text-sm font-bold">
+                  Product Designer
+                </h3>
+
+                <span class="text-[9px] text-slate-700 dark:text-slate-300">
+                  2024 — Present
+                </span>
+              </div>
+
+              <p class="mt-2 text-[10px] text-slate-700 dark:text-slate-300">
+                Product Design · UI/UX · Research
+              </p>
+
+              <p class="mt-3 text-xs leading-5 text-slate-700 dark:text-slate-300">
+                Designing digital products and experiences from early
+                concepts through polished interfaces.
+              </p>
+            </article>
+
+
+            <article class="border-b border-white/30 pb-5">
+              <div class="flex flex-wrap justify-between gap-3">
+                <h3 class="text-sm font-bold">
+                  UI/UX Designer
+                </h3>
+
+                <span class="text-[9px] text-slate-700 dark:text-slate-300">
+                  2022 — 2024
+                </span>
+              </div>
+
+              <p class="mt-2 text-[10px] text-slate-700 dark:text-slate-300">
+                Interface Design · Prototyping
+              </p>
+
+              <p class="mt-3 text-xs leading-5 text-slate-700 dark:text-slate-300">
+                Worked on user interfaces, prototypes and visual systems
+                across multiple digital products.
+              </p>
+            </article>
+
+
+            <article>
+              <div class="flex flex-wrap justify-between gap-3">
+                <h3 class="text-sm font-bold">
+                  Designer
+                </h3>
+
+                <span class="text-[9px] text-slate-700 dark:text-slate-300">
+                  2020 — 2022
+                </span>
+              </div>
+
+              <p class="mt-2 text-[10px] text-slate-700 dark:text-slate-300">
+                Visual Design · Branding
+              </p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section class="section-space bg-white dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-600">
+          Skills & Tools
+        </p>
+
+        <div class="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            UI/UX Design
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Figma
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Prototyping
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Research
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Design Systems
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Wireframing
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Interaction Design
+          </div>
+
+          <div class="rounded-xl border border-slate-100 p-4 text-center text-xs dark:border-slate-800">
+            Visual Design
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="px-4 pb-10">
+
+      <div class="container-site">
+
+        <div class="gradient-purple relative overflow-hidden rounded-3xl p-8 text-white">
+
+          <div class="relative z-10 flex flex-col justify-between gap-6 md:flex-row md:items-center">
+
+            <div>
+              <p class="text-[9px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                Let's Connect
+              </p>
+
+              <h2 class="mt-2 text-xl font-bold">
+                Let's build something meaningful together.
+              </h2>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="w-fit rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-purple-700"
+            >
+              Let's Talk
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="bg-[#5420ff] py-10 text-white">
+
+    <div class="container-site">
+
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+
+        <div>
+          <h2 class="text-lg font-bold">Bayo.</h2>
+
+          <p class="mt-3 max-w-xs text-xs leading-5 text-white/70">
+            Product designer focused on creating meaningful digital
+            experiences.
+          </p>
+
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">in</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">𝕏</a>
+            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">◎</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Navigation</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Services</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <span>UI/UX Design</span>
+            <span>Product Design</span>
+            <span>Design Systems</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Contact</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="mailto:badmusabdulaibayo@gmail.com">badmusabdulaibayo@gmail.com</a>
+            <span>Abuja, Nigeria</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        © 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+  
+  <script src="./js/theme.js"></script>
+
+</body>
+</html>
