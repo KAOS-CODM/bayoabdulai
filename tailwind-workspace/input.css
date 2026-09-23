@@ -59,3 +59,20 @@ body {
     radial-gradient(circle at 85% 15%, rgba(255,255,255,.2), transparent 25%),
     linear-gradient(135deg, #8060cf, #7652c8);
 }
+
+/* Hamburger → X animation */
+#menuToggle > span {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#menuToggle[aria-expanded="true"] > span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+#menuToggle[aria-expanded="true"] > span:nth-child(2) {
+  opacity: 0;
+}
+
+#menuToggle[aria-expanded="true"] > span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
