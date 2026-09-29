@@ -32,7 +32,9 @@ function updateThemeToggle() {
   const isDark = document.documentElement.classList.contains("dark");
 
   if (themeKnob) {
-    themeKnob.textContent = isDark ? "☾" : "☼";
+    themeKnob.innerHTML = isDark
+      ? '<i class="fa-solid fa-moon"></i>'
+      : '<i class="fa-solid fa-sun"></i>';
   }
 
   if (themeToggle) {

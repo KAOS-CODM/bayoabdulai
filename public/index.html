@@ -13,6 +13,7 @@
     rel="stylesheet"
   >
 
+  <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
   <link href="./dist/output.css" rel="stylesheet">
 </head>
 
@@ -65,9 +66,9 @@
           >
             <span
               id="themeKnob"
-              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[9px] shadow-sm transition-transform dark:translate-x-5"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[11px] shadow-sm transition-transform dark:translate-x-5"
             >
-              ☼
+              <i class="fa-solid fa-sun"></i>
             </span>
           </button>
 
@@ -173,10 +174,10 @@
             <div class="mt-6 flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
               <span>Follow me</span>
 
-              <a href="#" class="hover:text-purple-600">in</a>
-              <a href="#" class="hover:text-purple-600">𝕏</a>
-              <a href="#" class="hover:text-purple-600">◎</a>
-              <a href="#" class="hover:text-purple-600">●</a>
+              <a href="#" aria-label="LinkedIn" class="hover:text-purple-600"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="X" class="hover:text-purple-600"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" aria-label="Instagram" class="hover:text-purple-600"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="Dribbble" class="hover:text-purple-600"><i class="fa-brands fa-dribbble"></i></a>
             </div>
 
           </div>
@@ -206,12 +207,20 @@
 
               <div class="px-2 pb-2 pt-4">
 
-                <h2 class="text-sm font-bold">
+                <h2 class="text-[20px] font-bold">
                   Bayo Abdulai Badmus
                 </h2>
 
-                <p class="mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                <p class="mt-1 font-bold text-[14px] text-purple-600 dark:text-purple-400">
                   Product Designer · UI/UX
+                </p>
+
+                <p class="mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                  Abuja, Nigeria
+                </p>
+
+                <p class="mt-1 text-[10px] text-slate-500 dark:text-slate-400">
+                  Available for opportunites
                 </p>
 
               </div>
@@ -236,7 +245,7 @@
         <div class="grid grid-cols-2 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm dark:border-slate-800 dark:bg-[#191621] md:grid-cols-4">
 
           <div class="flex items-center gap-3 border-b border-slate-100 p-5 dark:border-slate-800 md:border-b-0 md:border-r">
-            <span class="text-lg text-purple-500">✦</span>
+            <span class="text-lg text-purple-500"><i class="fa-solid fa-clock"></i></span>
             <div>
               <p class="text-xs font-bold">5+</p>
               <p class="text-[9px] text-slate-500">Years Experience</p>
@@ -244,7 +253,7 @@
           </div>
 
           <div class="flex items-center gap-3 border-b border-slate-100 p-5 dark:border-slate-800 md:border-b-0 md:border-r">
-            <span class="text-lg text-purple-500">◈</span>
+            <span class="text-lg text-purple-500"><i class="fa-solid fa-diagram-project"></i></span>
             <div>
               <p class="text-xs font-bold">20+</p>
               <p class="text-[9px] text-slate-500">Projects Completed</p>
@@ -252,7 +261,7 @@
           </div>
 
           <div class="flex items-center gap-3 border-b border-slate-100 p-5 dark:border-slate-800 md:border-b-0 md:border-r">
-            <span class="text-lg text-purple-500">⌁</span>
+            <span class="text-lg text-purple-500"><i class="fa-solid fa-users"></i></span>
             <div>
               <p class="text-xs font-bold">15+</p>
               <p class="text-[9px] text-slate-500">Happy Clients</p>
@@ -260,7 +269,7 @@
           </div>
 
           <div class="flex items-center gap-3 p-5">
-            <span class="text-lg text-purple-500">✓</span>
+            <span class="text-lg text-purple-500"><i class="fa-solid fa-heart"></i></span>
             <div>
               <p class="text-xs font-bold">100%</p>
               <p class="text-[9px] text-slate-500">Client Satisfaction</p>
@@ -296,7 +305,8 @@
             href="work.html"
             class="hidden text-[10px] font-semibold text-purple-600 md:block"
           >
-            View all projects →
+            View all projects
+            <i class="fa-solid fa-arrow-right-long"></i>
           </a>
         </div>
 
@@ -315,10 +325,13 @@
             </div>
 
             <div class="p-4">
-              <p class="text-[9px] text-purple-600">Mobile App</p>
+              <p class="text-[9px] text-purple-600">Mobile App Design</p>
               <h3 class="mt-1 text-sm font-bold">Fast Food Delivery App</h3>
               <p class="mt-1 text-[9px] text-slate-500">
-                UI/UX Design
+                UI/UX
+              </p>
+              <p class="mt-1 text-[9px] text-slate-500">
+                Mobile
               </p>
             </div>
 
@@ -330,16 +343,19 @@
             <div class="aspect-[1.15/1] overflow-hidden bg-slate-100 dark:bg-slate-800">
               <img
                 src="./assets/images/project-2.png"
-                alt="Carework Africa"
+                alt="CareerOnTrack Ai"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               >
             </div>
 
             <div class="p-4">
-              <p class="text-[9px] text-purple-600">Web App</p>
-              <h3 class="mt-1 text-sm font-bold">Carework Africa</h3>
+              <p class="text-[9px] text-purple-600">Ai Platform Dashboard</p>
+              <h3 class="mt-1 text-sm font-bold">CareerOnTrack Ai</h3>
               <p class="mt-1 text-[9px] text-slate-500">
-                Product Design
+                UI/UX
+              </p>
+              <p class="mt-1 text-[9px] text-slate-500">
+                Web App
               </p>
             </div>
 
@@ -351,17 +367,20 @@
             <div class="aspect-[1.15/1] overflow-hidden bg-slate-100 dark:bg-slate-800">
               <img
                 src="./assets/images/project-3.png"
-                alt="NCS Website Redesign"
+                alt="NICN Website Redesign"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               >
             </div>
 
             <div class="p-4">
-              <p class="text-[9px] text-purple-600">Website</p>
-              <h3 class="mt-1 text-sm font-bold">NCS Website Redesign</h3>
+              <p class="text-[9px] text-purple-600">Government Website</p>
+              <h3 class="mt-1 text-sm font-bold">NICN Website Redesign</h3>
               <p class="mt-1 text-[9px] text-slate-500">
                 UI/UX Design
               </p>
+              <p class="mt-1 text-[9px] text-slate-900">
+                Web Design
+              </p> 
             </div>
 
           </article>
@@ -372,16 +391,19 @@
             <div class="aspect-[1.15/1] overflow-hidden bg-slate-100 dark:bg-slate-800">
               <img
                 src="./assets/images/project-4.png"
-                alt="Dashboard Design"
+                alt="NICN Clinic HIS"
                 class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               >
             </div>
 
             <div class="p-4">
-              <p class="text-[9px] text-purple-600">Dashboard</p>
-              <h3 class="mt-1 text-sm font-bold">Analytics Dashboard</h3>
+              <p class="text-[9px] text-purple-600">Healthcare Management System</p>
+              <h3 class="mt-1 text-sm font-bold">NICN Clinic HIS</h3>
               <p class="mt-1 text-[9px] text-slate-500">
-                Product Design
+                UI/UX
+              </p>
+              <p class="mt-1 text-[9px] text-slate-500">
+                Dashboard
               </p>
             </div>
 
@@ -607,9 +629,9 @@
           </p>
 
           <div class="mt-5 flex gap-3">
-            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">in</a>
-            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">𝕏</a>
-            <a href="#" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">◎</a>
+            <a href="#" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
 
