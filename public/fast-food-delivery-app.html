@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fast Food Delivery App | Bayo Abdulai Badmus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          <img
+            src="./assets/images/bayo-mark.svg"
+            alt=""
+            class="h-5 w-5"
+          >
+          
+          <span>Bayo.</span>
+        </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="index.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="text-purple-600 dark:text-purple-400">Work</a>
+          <a href="resume.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[11px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              <i class="fa-solid fa-sun"></i>
+            </span>
+          </button>
+
+          <a
+            href="contact.html"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+          <!-- Hamburger (mobile) -->
+          <button
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="flex h-7 w-7 flex-col items-center justify-center gap-[5px] rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 md:hidden"
+          >
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+          </button>
+
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="mt-3 hidden rounded-[24px] border border-slate-100 bg-white/95 p-3 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-[#1b1824]/95 md:hidden"
+      >
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="rounded-full bg-purple-50 px-4 py-2.5 text-xs font-medium text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">Work</a>
+          <a href="resume.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="bg-[#eee9ff] pb-12 pt-28 dark:bg-[#211d2d]">
+
+      <div class="container-site">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400">
+          <a href="index.html" class="transition hover:text-purple-600">Home</a>
+          <i class="fa-solid fa-chevron-right text-[7px] text-slate-400"></i>
+          <a href="work.html" class="transition hover:text-purple-600">Work</a>
+          <i class="fa-solid fa-chevron-right text-[7px] text-slate-400"></i>
+          <span class="font-medium text-purple-600">Fast Food Delivery App</span>
+        </nav>
+
+        <div class="mt-8 grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
+
+          <div>
+
+            <p class="text-[10px] tracking-wide text-slate-500 dark:text-slate-400">
+              02, Project 01
+            </p>
+
+            <h1 class="mt-3 max-w-md text-3xl font-extrabold leading-tight sm:text-4xl">
+              Fast Food
+              <br>
+              Delivery App
+            </h1>
+
+            <!-- Tag pills -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-mobile-screen-button text-purple-600"></i>
+                Mobile Product Design
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-magnifying-glass-chart text-purple-600"></i>
+                UX Research
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-cart-shopping text-purple-600"></i>
+                E-commerce
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-layer-group text-purple-600"></i>
+                Design System
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Phone screens -->
+          <div class="rounded-3xl bg-white p-4 shadow-lg dark:bg-[#1b1824]">
+            <img
+              src="./assets/images/fast-food-delivery-app/hero.png"
+              alt="Fast Food Delivery App screens"
+              class="w-full rounded-xl"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         META CARD
+    ========================================================== -->
+
+    <section class="bg-white py-10 dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <div class="grid gap-6 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-[#1b1824] sm:grid-cols-2 lg:grid-cols-5">
+
+          <div class="sm:col-span-2 lg:col-span-1">
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-circle-info text-purple-600"></i>
+              Project Overview
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              A seamless food ordering experience that allows users to browse
+              menus, place orders, track delivery in real-time and enjoy fast,
+              reliable service.
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-user text-purple-600"></i>
+              My Role
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              UI/UX Designer
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-clock text-purple-600"></i>
+              Timeline
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              8 Weeks
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-screwdriver-wrench text-purple-600"></i>
+              Tools
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              Figma, FigJam, Photoshop
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-users text-purple-600"></i>
+              Users / Target Audience
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              Busy individuals, students, office workers and families who order
+              food online.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTENT + SIDEBAR
+    ========================================================== -->
+
+    <section class="bg-white pb-16 dark:bg-[#111018]">
+
+      <div class="container-site grid gap-10 lg:grid-cols-[210px_1fr]">
+
+        <!-- ON THIS PAGE -->
+
+        <aside class="hidden lg:block">
+          <div class="sticky top-24">
+
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+              On This Page
+            </p>
+
+            <nav id="toc" class="mt-4 flex flex-col text-[11px]">
+              <a href="#project-overview"><span>01</span> Project Overview</a>
+              <a href="#research"><span>02</span> Research</a>
+              <a href="#key-insights"><span>03</span> Key Insights</a>
+              <a href="#pain-points"><span>04</span> User Pain Points</a>
+              <a href="#design-goals"><span>05</span> Design Goals</a>
+              <a href="#approach"><span>06</span> My Approach / Process</a>
+              <a href="#information-architecture"><span>07</span> Information Architecture</a>
+              <a href="#user-flow"><span>08</span> User Flow</a>
+              <a href="#design-exploration"><span>09</span> Design Exploration</a>
+              <a href="#wireframes"><span>10</span> Wireframes</a>
+              <a href="#visual-design"><span>11</span> Visual Design</a>
+              <a href="#final-solution"><span>12</span> Final Solution</a>
+              <a href="#prototype"><span>13</span> Prototype</a>
+              <a href="#outcomes"><span>14</span> Outcomes / Impact</a>
+              <a href="#lessons"><span>15</span> Lessons Learned</a>
+              <a href="#next-steps"><span>&nbsp;</span> Next Steps</a>
+            </nav>
+
+            <!-- Project brief -->
+            <!-- TODO: point href at the real PDF when it is ready -->
+            <div class="mt-6 rounded-2xl border border-slate-100 bg-white p-4 text-center shadow-sm dark:border-slate-800 dark:bg-[#1b1824]">
+              <span class="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                <i class="fa-solid fa-download text-sm"></i>
+              </span>
+              <p class="mt-3 text-[11px] font-bold">Project Brief (PDF)</p>
+              <a href="#" target="_blank" rel="noopener" class="mt-1 inline-block text-[10px] font-semibold text-purple-600 hover:underline">Download</a>
+            </div>
+
+          </div>
+        </aside>
+
+
+        <!-- SECTIONS -->
+
+        <div class="space-y-14">
+
+          <!-- 01 Project Overview -->
+
+          <section id="project-overview" class="scroll-mt-24">
+
+            <h2 class="text-base font-bold">
+              <span class="text-purple-600">01</span> Project Overview
+            </h2>
+
+            <div class="mt-4 grid gap-5 md:grid-cols-[1.3fr_1fr]">
+
+              <p class="text-xs leading-6 text-slate-600 dark:text-slate-300">
+                The goal of this project was to design a user-friendly, fast and
+                trustworthy food delivery app that simplifies the ordering
+                process while providing a delightful experience from browsing to
+                delivery.
+              </p>
+
+              <div class="rounded-2xl bg-[#f0ebff] p-5 dark:bg-[#211d2d]">
+                <p class="text-xs font-bold">Problem / Challenge</p>
+
+                <ul class="mt-3 space-y-2 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Users struggle to find their favorite food quickly.
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Complicated checkout process leads to cart abandonment.
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Lack of real-time order tracking and transparency.
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Limited personalization and relevant recommendations.
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- 02 / 03 / 04 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <section id="research" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">02</span> Research
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I used both qualitative and quantitative methods to understand
+                users, their needs and frustrations.
+              </p>
+
+              <p class="mt-4 text-[11px] font-bold">Methods</p>
+              <ul class="mt-2 space-y-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  User Interviews
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  Online Surveys
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  Competitor Analysis
+                </li>
+              </ul>
+
+              <p class="mt-4 text-[11px] font-bold">Participants</p>
+              <ul class="mt-2 space-y-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-user text-[9px] text-purple-600"></i>
+                  15 Participants
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-calendar text-[9px] text-purple-600"></i>
+                  Age 18–45
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-burger text-[9px] text-purple-600"></i>
+                  Frequent food delivery users
+                </li>
+              </ul>
+            </section>
+
+            <section id="key-insights" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">03</span> Key Insights
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Users want a faster way to find and reorder meals.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Real-time tracking and clear delivery details build trust.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Personalized recommendations improve engagement.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Multiple payment options increase convenience.
+                </li>
+              </ul>
+            </section>
+
+            <section id="pain-points" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">04</span> User Pain Points
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Hard to discover food or restaurants.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Too many steps to complete an order.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Unclear delivery time and order status.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Limited offers that match user preferences.
+                </li>
+              </ul>
+            </section>
+
+          </div>
+
+
+          <!-- 05 / 06 -->
+
+          <div class="grid gap-6 md:grid-cols-2">
+
+            <section id="design-goals" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">05</span> Design Goals
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Make food discovery quick and effortless.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Simplify the ordering and checkout process.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Provide real-time order tracking.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Offer personalized experiences and relevant offers.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Build trust and reliability in the platform.
+                </li>
+              </ul>
+            </section>
+
+            <section id="approach" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">06</span> My Approach / Process
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I followed a user-centered design approach to ensure the
+                solution is intuitive, efficient and delightful.
+              </p>
+
+              <div class="mt-5 flex flex-wrap items-start justify-between gap-x-2 gap-y-4">
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Understand</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Research &amp;<br>empathy</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-bullseye text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Define</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Problem &amp;<br>opportunities</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-lightbulb text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Ideate</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Ideation &amp;<br>solutions</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-pen text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Design</p>
+                  <p class="text-[8px] leading-3 text-slate-500">&nbsp;</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-clipboard-check text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Validate</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Testing &amp;<br>feedback</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Deliver</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Polished &amp;<br>scalable</p>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 07 / 08 / 09 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <!-- 07 Information Architecture -->
+
+            <section id="information-architecture" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">07</span> Information Architecture
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I organized content in a simple and intuitive structure.
+              </p>
+
+              <div class="mt-4 rounded-2xl bg-[#f0ebff] p-6 dark:bg-[#211d2d]">
+
+                <p class="text-center text-xs font-bold">
+                  Fast Food Delivery App
+                </p>
+
+                <div class="mt-4 flex flex-wrap justify-center gap-3">
+                  <span class="rounded-lg bg-white px-4 py-1.5 text-[10px] font-semibold shadow-sm dark:bg-[#302a40]">Home</span>
+                  <span class="rounded-lg bg-white px-4 py-1.5 text-[10px] font-semibold shadow-sm dark:bg-[#302a40]">Menu</span>
+                  <span class="rounded-lg bg-white px-4 py-1.5 text-[10px] font-semibold shadow-sm dark:bg-[#302a40]">Orders</span>
+                  <span class="rounded-lg bg-white px-4 py-1.5 text-[10px] font-semibold shadow-sm dark:bg-[#302a40]">Account</span>
+                </div>
+
+                <div class="mt-4 grid grid-cols-2 gap-2 text-center text-[10px] text-purple-600 sm:grid-cols-4 dark:text-purple-400">
+                  <span>Search</span>
+                  <span>Categories</span>
+                  <span>My Orders</span>
+                  <span>Order Tracking</span>
+                  <span>Profile</span>
+                  <span>Addresses</span>
+                  <span>History</span>
+                  <span>Payment</span>
+                </div>
+
+              </div>
+            </section>
+
+
+            <!-- 08 User Flow -->
+
+            <section id="user-flow" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">08</span> User Flow
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                A simplified flow of the core user journey.
+              </p>
+
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Splash</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Onboarding</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Home</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Menu</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Item Details</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Cart</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Checkout</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Payment</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Order Tracking</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                <span class="rounded-full bg-purple-50 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">Delivered</span>
+              </div>
+            </section>
+
+
+            <!-- =====================================================
+                 IMAGE SECTIONS (09 – 13)
+                 Drop the screenshots into ./assets/images/fast-food-delivery-app/ using the
+                 file names referenced by the <img> tags below.
+            ====================================================== -->
+
+            <!-- 09 Design Exploration -->
+
+            <section id="design-exploration" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">09</span> Design Exploration
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Exploring different layouts, components and visual styles.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/fast-food-delivery-app/design-exploration-1.png" alt="Design exploration" class="w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 10 / 11 / 12 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <!-- 10 Wireframes -->
+
+            <section id="wireframes" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">10</span> Wireframes
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Low-fidelity wireframes to validate structure and flow.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/fast-food-delivery-app/wireframes.png" alt="Wireframes" class="w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+
+            <!-- 11 Visual Design -->
+
+            <section id="visual-design" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">11</span> Visual Design
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Clean, modern and appetizing UI with vibrant colors and clear
+                hierarchy.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/fast-food-delivery-app/visual-design-1.png" alt="Visual Design" class="w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+
+            <!-- 12 Final Solution -->
+
+            <section id="final-solution" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">12</span> Final Solution
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                A complete, polished solution ready for real users.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/fast-food-delivery-app/final-solution-1.png" alt="Final Solution" class="w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 13 / 14 -->
+
+          <div class="grid gap-6 md:grid-cols-2">
+
+            <!-- 13 Prototype -->
+
+            <section id="prototype" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">13</span> Prototype
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Interactive prototype to test the entire user journey.
+              </p>
+
+              <!-- TODO: add the real prototype URL -->
+              <a href="#" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-purple-600 hover:underline">
+                View Prototype
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+
+              <div class="mt-4">
+                <img src="./assets/images/fast-food-delivery-app/prototype-1.png" alt="Prototype" class="w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+
+            <!-- 14 Outcomes / Impact -->
+
+            <section id="outcomes" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">14</span> Outcomes / Impact
+              </h2>
+
+              <div class="mt-4 space-y-4">
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-arrow-trend-up text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold">35%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Increase in order completion rate</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold">25%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Reduction in time to place an order</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-star text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold">4.8 / 5</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Average user satisfaction rating</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-rotate text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-lg font-extrabold">40%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Repeat orders within the first month</p>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 15 Lessons Learned + Next Steps -->
+
+          <div class="grid gap-6 md:grid-cols-2">
+
+            <section id="lessons" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">15</span> Lessons Learned
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  User research is key to solving the right problems.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Simplifying the experience leads to higher engagement and satisfaction.
+                </li>
+              </ul>
+            </section>
+
+            <section id="next-steps" class="scroll-mt-24">
+              <h2 class="text-base font-bold">Next Steps</h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Add subscription &amp; loyalty program.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Integrate more payment options.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Expand to more cities and restaurants.
+                </li>
+              </ul>
+            </section>
+
+          </div>
+
+
+          <!-- CTA -->
+
+          <div class="flex flex-col items-start justify-between gap-5 rounded-3xl bg-[#5420ff] p-7 text-white md:flex-row md:items-center">
+
+            <div class="flex items-center gap-4">
+              <span class="h-11 w-11 shrink-0 rounded-full bg-white"></span>
+
+              <div>
+                <p class="text-base font-bold">Have a project in mind?</p>
+                <p class="mt-1 text-xs text-white/70">
+                  I'm currently available for new opportunities and exciting projects.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="contact.html"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-purple-700 transition hover:bg-purple-50"
+            >
+              Let's Work Together
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer class="bg-[#5420ff] py-10 text-white">
+
+    <div class="container-site">
+
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+
+        <div>
+          <h2 class="text-lg font-bold">Bayo.</h2>
+
+          <p class="mt-3 max-w-xs text-xs leading-5 text-white/70">
+            Product designer focused on creating meaningful digital
+            experiences.
+          </p>
+
+          <div class="mt-5 flex gap-3">
+            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Navigation</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Services</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <span>UI/UX Design</span>
+            <span>Product Design</span>
+            <span>Design Systems</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Contact</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="mailto:badmusabdulaibayo@gmail.com">badmusabdulaibayo@gmail.com</a>
+            <span>Abuja, Nigeria</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        &copy; 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./js/theme.js"></script>
+  <script src="./js/nav.js"></script>
+
+  <!-- TOC scroll-spy -->
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+      var sections = links
+        .map(function (link) {
+          return document.querySelector(link.getAttribute("href"));
+        })
+        .filter(Boolean);
+
+      if (!("IntersectionObserver" in window) || !sections.length) return;
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+
+            links.forEach(function (link) {
+              var active = link.getAttribute("href") === "#" + entry.target.id;
+              link.classList.toggle("active", active);
+            });
+          });
+        },
+        { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+
+</body>
+</html>

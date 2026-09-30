@@ -60,6 +60,48 @@ body {
     linear-gradient(135deg, #8060cf, #7652c8);
 }
 
+/* Case study: on-this-page table of contents */
+#toc a {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #64748b;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#toc a span {
+  color: #94a3b8;
+}
+
+#toc a:hover {
+  color: #7c3aed;
+}
+
+#toc a.active {
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+.dark #toc a {
+  color: #94a3b8;
+}
+
+.dark #toc a span {
+  color: #64748b;
+}
+
+.dark #toc a:hover {
+  color: #c4b5fd;
+}
+
+.dark #toc a.active {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}
+
 /* Hamburger → X animation */
 #menuToggle > span {
   transition: transform 0.25s ease, opacity 0.25s ease;

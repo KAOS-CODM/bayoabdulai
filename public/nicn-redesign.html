@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NICN Website Redesign | Bayo Abdulai Badmus</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="./assets/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="./dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+            href="index.html"
+            class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+          >
+            <img
+              src="./assets/images/bayo-mark.svg"
+              alt=""
+              class="h-5 w-5"
+            >
+
+            <span>Bayo.</span>
+          </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="index.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="text-purple-600 dark:text-purple-400">Work</a>
+          <a href="resume.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[11px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              <i class="fa-solid fa-sun"></i>
+            </span>
+          </button>
+
+          <a
+            href="contact.html"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+          <!-- Hamburger (mobile) -->
+          <button
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="flex h-7 w-7 flex-col items-center justify-center gap-[5px] rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 md:hidden"
+          >
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+          </button>
+
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="mt-3 hidden rounded-[24px] border border-slate-100 bg-white/95 p-3 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-[#1b1824]/95 md:hidden"
+      >
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Home</a>
+          <a href="about.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">About</a>
+          <a href="work.html" class="rounded-full bg-purple-50 px-4 py-2.5 text-xs font-medium text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">Work</a>
+          <a href="resume.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Resume</a>
+          <a href="contact.html" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="bg-[#eee9ff] pb-12 pt-28 dark:bg-[#211d2d]">
+
+      <div class="container-site">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-[10px] text-slate-500 dark:text-slate-400">
+          <a href="index.html" class="transition hover:text-purple-600">Home</a>
+          <i class="fa-solid fa-chevron-right text-[7px] text-slate-400"></i>
+          <a href="work.html" class="transition hover:text-purple-600">Work</a>
+          <i class="fa-solid fa-chevron-right text-[7px] text-slate-400"></i>
+          <span class="font-medium text-purple-600">NICN Website Redesign</span>
+        </nav>
+
+        <div class="mt-8 grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
+
+          <div>
+
+            <p class="text-[10px] tracking-wide text-slate-500 dark:text-slate-400">
+              02, Project 01
+            </p>
+
+            <h1 class="mt-3 max-w-md text-3xl font-extrabold leading-tight sm:text-4xl">
+              NICN Website
+              <br>
+              Redesign
+            </h1>
+
+            <!-- Tag pills -->
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-landmark text-purple-600"></i>
+                Government / Public Service
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-sitemap text-purple-600"></i>
+                Information Architecture
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-mobile-screen-button text-purple-600"></i>
+                Responsive Web Design
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-[10px] font-medium text-slate-700 shadow-sm dark:bg-[#1b1824] dark:text-slate-300">
+                <i class="fa-solid fa-universal-access text-purple-600"></i>
+                Accessibility
+              </span>
+            </div>
+
+          </div>
+
+          <!-- Hero screenshot: ./assets/images/nicn-redesign/hero.png -->
+          <div class="rounded-3xl bg-white p-4 shadow-lg dark:bg-[#1b1824]">
+            <img
+              src="./assets/images/nicn-redesign/hero.png"
+              alt="NICN Website Redesign homepage"
+              class="aspect-16/10 w-full rounded-xl object-cover"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         META CARD
+    ========================================================== -->
+
+    <section class="bg-white py-10 dark:bg-[#111018]">
+
+      <div class="container-site">
+
+        <div class="grid gap-6 rounded-3xl border border-slate-100 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-[#1b1824] sm:grid-cols-2 lg:grid-cols-5">
+
+          <div class="sm:col-span-2 lg:col-span-1">
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-circle-info text-purple-600"></i>
+              Project Overview
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              Redesigned the official website of the National Industrial Court
+              of Nigeria with improved usability, information architecture and
+              user experience for all stakeholders.
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-user text-purple-600"></i>
+              My Role
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              UX/UI Designer
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-clock text-purple-600"></i>
+              Timeline
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              8 Weeks
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-screwdriver-wrench text-purple-600"></i>
+              Tools
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              Figma, FigJam, Photoshop, WAVE
+            </p>
+          </div>
+
+          <div>
+            <p class="flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.15em] text-slate-400">
+              <i class="fa-solid fa-users text-purple-600"></i>
+              Users / Target Audience
+            </p>
+            <p class="mt-2 text-[11px] font-medium leading-5 text-slate-600 dark:text-slate-300">
+              Lawyers, Judges, Litigants, Members of the public, Court staff,
+              Researchers and Media.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTENT + SIDEBAR
+    ========================================================== -->
+
+    <section class="bg-white pb-16 dark:bg-[#111018]">
+
+      <div class="container-site grid gap-10 lg:grid-cols-[210px_1fr]">
+
+        <!-- ON THIS PAGE -->
+
+        <aside class="hidden lg:block">
+          <div class="sticky top-24">
+
+            <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">
+              On This Page
+            </p>
+
+            <nav id="toc" class="mt-4 flex flex-col text-[11px]">
+              <a href="#project-overview"><span>01</span> Project Overview</a>
+              <a href="#research"><span>02</span> Research</a>
+              <a href="#key-insights"><span>03</span> Key Insights</a>
+              <a href="#pain-points"><span>04</span> User Pain Points</a>
+              <a href="#design-goals"><span>05</span> Design Goals</a>
+              <a href="#approach"><span>06</span> My Approach / Process</a>
+              <a href="#old-vs-new"><span>07</span> Old Website vs New Website</a>
+              <a href="#information-architecture"><span>08</span> Information Architecture</a>
+              <a href="#user-flow"><span>09</span> User Flow</a>
+              <a href="#design-exploration"><span>10</span> Design Exploration</a>
+              <a href="#wireframes"><span>11</span> Wireframes</a>
+              <a href="#visual-design"><span>12</span> Visual Design</a>
+              <a href="#final-solution"><span>13</span> Final Solution</a>
+              <a href="#prototype"><span>14</span> Prototype</a>
+              <a href="#outcomes"><span>15</span> Outcomes / Impact</a>
+              <a href="#lessons"><span>16</span> Lessons Learned</a>
+              <a href="#next-steps"><span>17</span> Next Steps</a>
+            </nav>
+
+            <!-- Project brief -->
+            <!-- TODO: point href at the real PDF when it is ready -->
+            <div class="mt-6 rounded-2xl border border-slate-100 bg-white p-4 text-center shadow-sm dark:border-slate-800 dark:bg-[#1b1824]">
+              <span class="mx-auto flex h-9 w-9 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                <i class="fa-solid fa-download text-sm"></i>
+              </span>
+              <p class="mt-3 text-[11px] font-bold">Project Brief (PDF)</p>
+              <a href="#" target="_blank" rel="noopener" class="mt-1 inline-block text-[10px] font-semibold text-purple-600 hover:underline">Download</a>
+            </div>
+
+          </div>
+        </aside>
+
+
+        <!-- SECTIONS -->
+
+        <div class="space-y-14">
+
+          <!-- 01 Project Overview -->
+
+          <section id="project-overview" class="scroll-mt-24">
+
+            <h2 class="text-base font-bold">
+              <span class="text-purple-600">01</span> Project Overview
+            </h2>
+
+            <div class="mt-4 grid gap-5 md:grid-cols-[1.3fr_1fr]">
+
+              <p class="text-xs leading-6 text-slate-600 dark:text-slate-300">
+                The old NICN website was outdated, difficult to navigate, not
+                mobile friendly and had limited accessibility. The goal of this
+                project was to create a modern, responsive and accessible
+                platform that makes information easy to find and services easy
+                to use.
+              </p>
+
+              <div class="rounded-2xl bg-slate-100 p-5 dark:bg-[#1b1824]">
+                <p class="text-xs font-bold">Problem / Challenge</p>
+
+                <ul class="mt-3 space-y-2 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Outdated design and inconsistent UI
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Poor information architecture and navigation
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Not mobile responsive
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Low accessibility compliance
+                  </li>
+                  <li class="flex gap-2">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                    Important services and resources hard to discover
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+          </section>
+
+
+          <!-- 02 / 03 / 04 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <section id="research" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">02</span> Research
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                I used both qualitative and quantitative methods to understand
+                users, their needs and frustrations.
+              </p>
+
+              <p class="mt-4 text-[11px] font-bold">Methods</p>
+              <ul class="mt-2 space-y-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  User Interviews
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  Heuristic Reviews
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  Online Surveys
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-check text-[9px] text-purple-600"></i>
+                  Competitive Analysis
+                </li>
+              </ul>
+
+              <p class="mt-4 text-[11px] font-bold">Participants</p>
+              <ul class="mt-2 space-y-1.5 text-[11px] text-slate-600 dark:text-slate-300">
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-scale-balanced text-[9px] text-purple-600"></i>
+                  12 Legal Practitioners
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-building-columns text-[9px] text-purple-600"></i>
+                  8 Court Staff
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-users text-[9px] text-purple-600"></i>
+                  11 General Public
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fa-solid fa-microphone text-[9px] text-purple-600"></i>
+                  5 Media Personnel
+                </li>
+              </ul>
+            </section>
+
+            <section id="key-insights" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">03</span> Key Insights
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Users need quick access to judgments, cause lists and court forms.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Search should be smarter and more prominent.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Mobile experience must be seamless.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Accessibility and readability are major concerns.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Trust and credibility should reflect in the design.
+                </li>
+              </ul>
+            </section>
+
+            <section id="pain-points" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">04</span> User Pain Points
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Hard to find judgments and case information.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Cluttered layout with too much text.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Not mobile friendly and slow.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Important services are hidden.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  Poor contrast and small font affect readability.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-xmark mt-0.5 text-red-500"></i>
+                  No clear structure for resources and downloads.
+                </li>
+              </ul>
+            </section>
+
+          </div>
+
+
+          <!-- 05 / 06 -->
+
+          <div class="grid gap-6 md:grid-cols-2">
+
+            <section id="design-goals" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">05</span> Design Goals
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Make information easy to find and understand.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Improve accessibility and readability.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Create a responsive experience across all devices.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Highlight key services and resources.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-check mt-0.5 text-purple-600"></i>
+                  Build trust and credibility through design.
+                </li>
+              </ul>
+            </section>
+
+            <section id="approach" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">06</span> My Approach / Process
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                I followed a user-centered design approach to ensure the solution
+                is intuitive, efficient and accessible.
+              </p>
+
+              <div class="mt-5 flex flex-wrap items-start justify-between gap-x-2 gap-y-4">
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Understand</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Research &amp;<br>Empathy</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-bullseye text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Define</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Problem &amp;<br>Opportunities</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-lightbulb text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Design</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Ideation &amp;<br>Solutions</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-user text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Validate</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Testing &amp;<br>Feedback</p>
+                </div>
+
+                <i class="fa-solid fa-arrow-right mt-3 text-[10px] text-purple-300"></i>
+
+                <div class="flex flex-col items-center gap-1.5 text-center">
+                  <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-600 text-white">
+                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                  </span>
+                  <p class="text-[10px] font-bold">Deliver</p>
+                  <p class="text-[8px] leading-3 text-slate-500">Polished &amp;<br>Scalable</p>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- =====================================================
+               IMAGE SECTIONS (07, 10 – 14)
+               Drop the screenshots into ./assets/images/nicn-redesign/
+               using the file names referenced by the <img> tags below.
+          ====================================================== -->
+
+          <!-- 07 Old Website vs New Website -->
+
+          <section id="old-vs-new" class="scroll-mt-24">
+
+            <h2 class="text-base font-bold">
+              <span class="text-purple-600">07</span> Old Website vs New Website
+            </h2>
+
+            <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+              A before-and-after comparison of the outdated site and the
+              redesigned platform.
+            </p>
+
+            <div class="relative mt-4 grid gap-6 md:grid-cols-2">
+
+              <span class="absolute left-1/2 top-1/2 z-10 hidden h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-purple-600 shadow-lg md:flex">
+                <i class="fa-solid fa-angles-right text-xs"></i>
+              </span>
+
+              <div>
+                <p class="mb-2 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
+                  Old Website (Before)
+                </p>
+                <img src="./assets/images/nicn-redesign/old-website.png" alt="Old NICN website before the redesign" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+
+              <div>
+                <p class="mb-2 text-[10px] font-semibold text-slate-500 dark:text-slate-400">
+                  New Website (After)
+                </p>
+                <img src="./assets/images/nicn-redesign/new-website.png" alt="Redesigned NICN website" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+
+            </div>
+
+            <div class="mt-5 overflow-x-auto rounded-2xl border border-slate-100 dark:border-slate-800">
+              <table class="w-full min-w-[640px] border-collapse text-left text-[11px]">
+
+                <thead>
+                  <tr class="bg-[#f0ebff] text-purple-700 dark:bg-[#211d2d] dark:text-purple-300">
+                    <th class="px-4 py-3 font-bold">Aspect</th>
+                    <th class="px-4 py-3 font-bold">Old Website</th>
+                    <th class="px-4 py-3 font-bold">New Website</th>
+                  </tr>
+                </thead>
+
+                <tbody class="text-slate-600 dark:text-slate-300">
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Design</td>
+                    <td class="px-4 py-3">Outdated look, cluttered layout, inconsistent UI</td>
+                    <td class="px-4 py-3">Modern, clean and consistent design system</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Navigation</td>
+                    <td class="px-4 py-3">Complex navigation, hard to find key information</td>
+                    <td class="px-4 py-3">Simplified navigation with clear structure and hierarchy</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Mobile Experience</td>
+                    <td class="px-4 py-3">Not mobile responsive, difficult to use on phones</td>
+                    <td class="px-4 py-3">Fully responsive and optimized for all devices</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Information Architecture</td>
+                    <td class="px-4 py-3">Poor content organization, information buried</td>
+                    <td class="px-4 py-3">Logical structure with easy access to key services</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Accessibility</td>
+                    <td class="px-4 py-3">Low contrast, small text, not accessibility compliant</td>
+                    <td class="px-4 py-3">WCAG 2.1 compliant with better contrast and readability</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Performance</td>
+                    <td class="px-4 py-3">Slow loading speed</td>
+                    <td class="px-4 py-3">Optimized assets and faster performance</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">User Experience</td>
+                    <td class="px-4 py-3">Frustrating and confusing experience</td>
+                    <td class="px-4 py-3">Intuitive, user-friendly and engaging experience</td>
+                  </tr>
+                  <tr class="border-t border-slate-100 dark:border-slate-800">
+                    <td class="px-4 py-3 font-semibold text-slate-900 dark:text-white">Trust &amp; Credibility</td>
+                    <td class="px-4 py-3">Design didn't reflect the court's authority</td>
+                    <td class="px-4 py-3">Professional design that builds trust and credibility</td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+
+          </section>
+
+
+          <!-- 08 / 09 / 10 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <section id="information-architecture" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">08</span> Information Architecture
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Organised content into a clear structure.
+              </p>
+
+              <div class="mt-4 rounded-2xl bg-[#f0ebff] p-5 dark:bg-[#211d2d]">
+
+                <span class="mx-auto block w-fit rounded-lg bg-white px-4 py-2 text-xs font-bold shadow-sm dark:bg-[#302a40]">
+                  Home
+                </span>
+
+                <div class="mt-4 grid grid-cols-2 gap-3">
+
+                  <div class="rounded-xl bg-white/60 p-3 dark:bg-[#302a40]/60">
+                    <p class="text-center text-[10px] font-bold">About Us</p>
+                    <div class="mt-2 flex flex-wrap justify-center gap-1.5">
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">About Court</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Judges</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Registry</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Library</span>
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl bg-white/60 p-3 dark:bg-[#302a40]/60">
+                    <p class="text-center text-[10px] font-bold">Services</p>
+                    <div class="mt-2 flex flex-wrap justify-center gap-1.5">
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Cause List</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Forms</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">e-Filing</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Downloads</span>
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl bg-white/60 p-3 dark:bg-[#302a40]/60">
+                    <p class="text-center text-[10px] font-bold">Judgments</p>
+                    <div class="mt-2 flex flex-wrap justify-center gap-1.5">
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Search Judgments</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Recent Judgments</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Case Status</span>
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl bg-white/60 p-3 dark:bg-[#302a40]/60">
+                    <p class="text-center text-[10px] font-bold">Media</p>
+                    <div class="mt-2 flex flex-wrap justify-center gap-1.5">
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">News</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Gallery</span>
+                      <span class="rounded-md bg-white px-2 py-1 text-center text-[9px] text-purple-600 shadow-sm dark:bg-[#302a40] dark:text-purple-400">Press Releases</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </section>
+
+            <section id="user-flow" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">09</span> User Flow
+              </h2>
+
+              <p class="mt-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+                Simplified flow for common user tasks.
+              </p>
+
+              <div class="mt-4 rounded-2xl bg-[#f0ebff] p-5 dark:bg-[#211d2d]">
+
+                <p class="text-[11px] font-bold">Find a Judgment</p>
+                <div class="mt-2 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Home</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Judgments</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Search / Filter</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">View Judgment</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Download</span>
+                </div>
+
+                <p class="mt-5 text-[11px] font-bold">File a Case</p>
+                <div class="mt-2 flex flex-wrap items-center gap-2">
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Home</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">e-Filing</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Fill Form</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Upload Document</span>
+                  <i class="fa-solid fa-arrow-right text-[9px] text-purple-400"></i>
+                  <span class="rounded-full bg-purple-100/70 px-3 py-1.5 text-[10px] font-medium text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">Submit</span>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="design-exploration" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">10</span> Design Exploration
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                Exploring different layouts, components and visual styles.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/nicn-redesign/design-exploration.png" alt="NICN website design exploration" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 11 / 12 / 13 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <section id="wireframes" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">11</span> Wireframes
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                Low-fidelity wireframes to validate structure and flow.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/nicn-redesign/wireframes.png" alt="NICN website wireframes" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+            <section id="visual-design" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">12</span> Visual Design
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                Clean, modern design with court-inspired color palette.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/nicn-redesign/visual-design.png" alt="NICN website visual design" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+            <section id="final-solution" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">13</span> Final Solution
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                A complete polished solution ready for real users.
+              </p>
+
+              <div class="mt-4">
+                <img src="./assets/images/nicn-redesign/final-solution.png" alt="NICN website final solution" class="aspect-16/10 w-full rounded-2xl object-cover">
+              </div>
+            </section>
+
+          </div>
+
+
+          <!-- 14 / 15 / 16 -->
+
+          <div class="grid gap-6 md:grid-cols-3">
+
+            <section id="prototype" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">14</span> Prototype
+              </h2>
+
+              <p class="mt-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                Interactive prototype to test the entire user journey.
+              </p>
+
+              <!-- TODO: add the real prototype URL -->
+              <a href="#" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-purple-600 hover:underline">
+                View Prototype
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+
+              <div class="relative mt-4">
+                <img src="./assets/images/nicn-redesign/prototype.png" alt="NICN website prototype" class="aspect-16/10 w-full rounded-2xl object-cover">
+                <span class="absolute inset-0 flex items-center justify-center">
+                  <span class="flex h-12 w-12 items-center justify-center rounded-full bg-slate-900/70 text-white shadow-lg">
+                    <i class="fa-solid fa-play"></i>
+                  </span>
+                </span>
+              </div>
+            </section>
+
+            <section id="outcomes" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">15</span> Outcomes / Impact
+              </h2>
+
+              <div class="mt-4 space-y-4">
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-mobile-screen-button text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-base font-extrabold">48%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Increase in mobile traffic</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-clock text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-base font-extrabold">36%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Increase in time on site</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-arrow-trend-up text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-base font-extrabold">60%</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Increase in pages per session</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-universal-access text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-base font-extrabold">90+</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Accessibility score (WAVE &amp; Lighthouse)</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-900/30">
+                    <i class="fa-solid fa-star text-sm"></i>
+                  </span>
+                  <div>
+                    <p class="text-base font-extrabold">Positive</p>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Feedback from users and stakeholders</p>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="lessons" class="scroll-mt-24">
+              <h2 class="text-base font-bold">
+                <span class="text-purple-600">16</span> Lessons Learned
+              </h2>
+
+              <ul class="mt-3 space-y-2.5 text-[11px] leading-5 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  User research is key to solving the right problems.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Information architecture has a huge impact on usability.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Accessibility is a requirement, not an add-on.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Continuous testing and feedback lead to better outcomes.
+                </li>
+                <li class="flex gap-2">
+                  <i class="fa-solid fa-circle-check mt-0.5 text-emerald-500"></i>
+                  Designing for trust is as important as designing for usability.
+                </li>
+              </ul>
+            </section>
+
+          </div>
+
+
+          <!-- 17 Next Steps -->
+
+          <section id="next-steps" class="scroll-mt-24">
+
+            <h2 class="text-base font-bold">
+              <span class="text-purple-600">17</span> Next Steps
+            </h2>
+
+            <div class="mt-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-[#1b1824]">
+
+              <ul class="grid gap-3 text-[11px] leading-5 text-slate-600 dark:text-slate-300 md:grid-cols-2">
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Integrate e-filing system for a seamless experience.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Implement advanced search and filtering.
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Add multilingual support (English and Hausa).
+                </li>
+                <li class="flex gap-2">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-600"></span>
+                  Expand AI-powered feedback for quick assistance.
+                </li>
+              </ul>
+
+            </div>
+
+          </section>
+
+
+          <!-- CTA -->
+
+          <div class="flex flex-col items-start justify-between gap-5 rounded-3xl bg-[#5420ff] p-7 text-white md:flex-row md:items-center">
+
+            <div class="flex items-center gap-4">
+              <span class="h-11 w-11 shrink-0 rounded-full bg-white"></span>
+
+              <div>
+                <p class="text-base font-bold">Have a similar project in mind?</p>
+                <p class="mt-1 text-xs text-white/70">
+                  Let's build digital experiences that create real impact.
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="contact.html"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-purple-700 transition hover:bg-purple-50"
+            >
+              Let's Work Together
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer class="bg-[#5420ff] py-10 text-white">
+
+    <div class="container-site">
+
+      <div class="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
+
+        <div>
+          <h2 class="text-lg font-bold">Bayo.</h2>
+
+          <p class="mt-3 max-w-xs text-xs leading-5 text-white/70">
+            Product designer focused on creating meaningful digital
+            experiences.
+          </p>
+
+          <div class="mt-5 flex gap-3">
+            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="X" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] transition hover:bg-white/20"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Navigation</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="resume.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Services</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <span>UI/UX Design</span>
+            <span>Product Design</span>
+            <span>Design Systems</span>
+            <span>Prototyping</span>
+          </div>
+        </div>
+
+
+        <div>
+          <h3 class="text-xs font-bold">Contact</h3>
+
+          <div class="mt-4 flex flex-col gap-2 text-[10px] text-white/70">
+            <a href="mailto:badmusabdulaibayo@gmail.com">badmusabdulaibayo@gmail.com</a>
+            <span>Abuja, Nigeria</span>
+            <span>Available for work</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        © 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="./js/theme.js"></script>
+  <script src="./js/nav.js"></script>
+
+  <!-- TOC scroll-spy -->
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll("#toc a"));
+      var sections = links
+        .map(function (link) {
+          return document.querySelector(link.getAttribute("href"));
+        })
+        .filter(Boolean);
+
+      if (!("IntersectionObserver" in window) || !sections.length) return;
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+
+            links.forEach(function (link) {
+              var active = link.getAttribute("href") === "#" + entry.target.id;
+              link.classList.toggle("active", active);
+            });
+          });
+        },
+        { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+      );
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+  </script>
+
+</body>
+</html>
