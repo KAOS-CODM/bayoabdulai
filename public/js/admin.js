@@ -181,6 +181,7 @@ $('#login-form').addEventListener('submit', async (e) => {
     const res = await fetch(`${API_BASE}/api/v1/admin/auth/login`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify({
         email: $('#login-email').value.trim(),
         password: $('#login-password').value,
