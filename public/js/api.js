@@ -1,8 +1,13 @@
 // =========================================================
 // PUBLIC API UTILITY
 // Bayo Abdulai Badmus Portfolio
-// Uses same-origin relative URLs; no server secrets exposed.
+// Uses backend base URL; all requests go to the Node.js API.
 // =========================================================
+
+/**
+ * Backend API base URL (separate Render service).
+ */
+const API_BASE = 'https://bayoabdulai-api.onrender.com';
 
 /**
  * Fetches from the server with consistent error handling.
@@ -11,7 +16,9 @@
  */
 async function apiFetch(url) {
   try {
-    const response = await fetch(url);
+    const response = await fetch(`${API_BASE}${url}`, {
+      credentials: 'include',
+    });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }

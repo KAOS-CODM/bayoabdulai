@@ -17,6 +17,34 @@ export function createApp(config) {
   const app = express();
   app.locals.config = config;
 
+  // CORS: credentialed access only from the frontend Render origin.
+  // OPTIONS preflight is handled before session/auth middleware below.
+  const FRONTEND_ORIGIN = 'https://bayoabdulai.onrender.com';
+
+  app.use((req, res, next) => {
+    const origin = req.headers.origin;
+    if (origin === FRONTEND_ORIGIN) {
+      res.setHeader('Access-Control-Allow-Origin', origin);
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+      // Allow the methods and headers the admin UI uses, plus the CSRF header.
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+      res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-csrf-token, Authorization');
+      // Expose the CSRF cookie name to the frontend (it sets httpOnly:false on the backend,
+      // but browsers still need to know the cookie name for the double-submit pattern).
+      res.setHeader('Access-Control-Expose-Headers', 'x-csrf-token');
+    }
+    // Vary: Origin so caches don't serve the wrong origin a cached response.
+    if (origin) {
+      res.setHeader('Vary', 'Origin');
+    }
+    // For OPTIONS preflight, complete the response immediately without session/auth.
+    if (req.method === 'OPTIONS') {
+      res.status(204).end();
+      return;
+    }
+    next();
+  });
+
   // Render terminates TLS; trust exactly one proxy hop so secure cookies work.
   app.set('trust proxy', 1);
   app.disable('x-powered-by');
@@ -32,7 +60,7 @@ export function createApp(config) {
         styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
         imgSrc: ["'self'", 'data:', 'https://res.cloudinary.com', 'https://images.unsplash.com'],
-        connectSrc: ["'self'"],
+        connectSrc: ["'self'", 'https://bayoabdulai-api.onrender.com'],
         objectSrc: ["'none'"],
         baseUri: ["'self'"],
         formAction: ["'self'"],

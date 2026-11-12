@@ -40,18 +40,36 @@ const ROW_TEMPLATES = {
 // API client
 // ---------------------------------------------------------------------------
 
+// The bayo_csrf cookie is set by the backend on the api origin;
+// it is not accessible to frontend JS on the different onrender.com origin.
+// Instead, we store the CSRF token in localStorage after login so it
+// persists across page reloads and new admin sessions.
+const CSRF_STORAGE_KEY = 'bayo_csrf_token';
+
 function readCsrf() {
+  // Priority: localStorage (set after login) falls back to cookie read
+  // (only possible on same-origin responses, kept for other flows).
+  const stored = localStorage.getItem(CSRF_STORAGE_KEY);
+  if (stored) return stored;
   const line = document.cookie.split('; ').find((c) => c.startsWith('bayo_csrf='));
   return line ? decodeURIComponent(line.slice('bayo_csrf='.length)) : '';
 }
 
+// Store the CSRF token in localStorage after a successful login.
+// This is the safe mechanism: the backend sets httpOnly=false bayo_csrf
+// cookie that JS cannot cross-origin read, so we mirror it into localStorage.
+function storeCsrfToken(token) {
+  localStorage.setItem(CSRF_STORAGE_KEY, token);
+}
+
 async function api(method, path, body) {
-  const res = await fetch(path, {
+  const res = await fetch(`${API_BASE}${path}`, {
     method,
     headers: {
       'content-type': 'application/json',
-      ...(method === 'GET' ? {} : { 'x-csrf-token': readCsrf() }),
+      ...(method !== 'GET' ? { 'x-csrf-token': readCsrf() } : {}),
     },
+    credentials: 'include',
     body: body === undefined ? undefined : JSON.stringify(body),
   });
   let data = null;
@@ -76,10 +94,11 @@ async function api(method, path, body) {
 async function uploadImageFile(file) {
   const fd = new FormData();
   fd.append('image', file);
-  const res = await fetch('/api/v1/admin/uploads', {
+  const res = await fetch(`${API_BASE}/api/v1/admin/uploads`, {
     method: 'POST',
     headers: { 'x-csrf-token': readCsrf() },
     body: fd,
+    credentials: 'include',
   });
   let data = null;
   try { data = await res.json(); } catch { /* non-JSON */ }
@@ -126,7 +145,9 @@ function showApp() {
 
 async function init() {
   try {
-    const res = await fetch('/api/v1/admin/auth/me');
+    const res = await fetch(`${API_BASE}/api/v1/admin/auth/me`, {
+      credentials: 'include',
+    });
     if (res.ok) {
       state.me = (await res.json()).data;
       showApp();
@@ -143,7 +164,7 @@ $('#login-form').addEventListener('submit', async (e) => {
   errBox.classList.add('hidden');
   btn.disabled = true;
   try {
-    const res = await fetch('/api/v1/admin/auth/login', {
+    const res = await fetch(`${API_BASE}/api/v1/admin/auth/login`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
@@ -159,6 +180,10 @@ $('#login-form').addEventListener('submit', async (e) => {
     }
     state.me = data.data;
     $('#login-password').value = '';
+    // Store CSRF token in localStorage so it persists across page reloads
+    // and new admin sessions (the bayo_csrf cookie lives on the backend
+    // origin and is not readable by frontend JS on the frontend origin).
+    storeCsrfToken(data.data.csrfToken);
     showApp();
   } catch {
     errBox.textContent = 'Network error. Please try again.';
