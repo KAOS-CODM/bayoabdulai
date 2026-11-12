@@ -2,12 +2,28 @@
 // PUBLIC API UTILITY
 // Bayo Abdulai Badmus Portfolio
 // Uses backend base URL; all requests go to the Node.js API.
+// Auto-detects base URL: relative for local development, absolute for Render.
 // =========================================================
 
 /**
- * Backend API base URL (separate Render service).
+ * Backend API base URL.
+ * - Localhost: relative ('') so requests go to the dev server origin.
+ * - Render production: absolute URL of the backend service.
+ * This is evaluated once at module load time.
  */
-const API_BASE = 'https://bayoabdulai-api.onrender.com';
+const API_BASE = (() => {
+  if (typeof window === 'undefined') {
+    // Server-side (Node test environment) – use relative so tests work regardless of origin.
+    return '';
+  }
+  // Browser: use relative URLs for local dev, absolute for deployed Render.
+  const hostname = window.location.hostname;
+  if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') {
+    return ''; // root-relative: /api/v1/... resolves against the page's origin
+  }
+  // Deployed on Render (or any non-local hostname) – point at the backend service.
+  return 'https://bayoabdulai-api.onrender.com';
+})();
 
 /**
  * Fetches from the server with consistent error handling.

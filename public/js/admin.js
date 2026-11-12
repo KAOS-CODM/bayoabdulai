@@ -40,6 +40,20 @@ const ROW_TEMPLATES = {
 // API client
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// API base URL – same auto-detection as api.js, kept consistent sitewide.
+// ---------------------------------------------------------------------------
+const API_BASE = (() => {
+  if (typeof window === 'undefined') {
+    return '';
+  }
+  const hostname = window.location.hostname;
+  if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') {
+    return '';
+  }
+  return 'https://bayoabdulai-api.onrender.com';
+})();
+
 // The bayo_csrf cookie is set by the backend on the api origin;
 // it is not accessible to frontend JS on the different onrender.com origin.
 // Instead, we store the CSRF token in localStorage after login so it
