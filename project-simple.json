@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "title": "Fast Food Delivery App",
+      "slug": "fast-food-delivery-app",
+      "shortDescription": "A seamless food ordering experience",
+      "category": "Web Design",
+      "status": "draft"
+    }
+  ]
+}
