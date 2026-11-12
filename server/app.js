@@ -67,6 +67,19 @@ export function createApp(config) {
         frameSrc: ["'self'", 'https://www.youtube.com', 'https://www.youtube-nocookie.com', 'https://player.vimeo.com'],
       },
     },
+    referrerPolicy: { policy: 'strict-origin-when-cross-origin' },
+    permissionsPolicy: {
+      accelerometer: '()',
+      camera: '()',
+      geolocation: '()',
+      gyroscope: '()',
+      magnetometer: '()',
+      microphone: '()',
+      payment: '()',
+      usb: '()',
+    },
+    hsts: { maxAge: 31536000, includeSubDomains: true, preload: true },
+    frameguard: { action: 'sameorigin' },
   }));
 
   // JSON API body limit
