@@ -98,7 +98,7 @@ export function createApp(config) {
     store: sessionStore,
     cookie: {
       httpOnly: true,
-      sameSite: 'lax',
+      sameSite: 'none',
       secure: config.isProduction,
       maxAge: config.sessionTtlMs,
       path: '/',
