@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Page not found | Bayo Abdulai Badmus</title>
+  <meta name="description" content="The page you requested could not be found.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-900 transition-colors duration-300 dark:bg-[#111018] dark:text-white">
+
+  <!-- NAVBAR -->
+  <header class="absolute inset-x-0 top-0 z-50">
+    <div class="container-site pt-5">
+
+      <nav
+        class="flex h-12 items-center justify-between rounded-full
+               bg-white/80 px-5 shadow-sm backdrop-blur-md
+               dark:bg-[#1b1824]/90"
+      >
+
+        <!-- Logo -->
+        <a
+          href="/"
+          class="flex items-center gap-1.5 text-sm font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          <img
+            src="/assets/images/bayo-mark.svg"
+            alt=""
+            class="h-5 w-5"
+          >
+          <span>Bayo.</span>
+        </a>
+
+        <!-- Navigation -->
+        <div class="hidden items-center gap-7 text-[11px] font-medium md:flex">
+          <a href="/" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Home</a>
+          <a href="/about" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">About</a>
+          <a href="/work" class="text-purple-600 dark:text-purple-400">Work</a>
+          <a href="/resume" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Resume</a>
+          <a href="/contact" class="text-slate-500 transition hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400">Contact</a>
+        </div>
+
+        <!-- Theme + CTA -->
+        <div class="flex items-center gap-2">
+
+          <button
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle theme"
+            class="flex h-7 w-12 items-center rounded-full bg-slate-100 p-1 dark:bg-slate-700"
+          >
+            <span
+              id="themeKnob"
+              class="flex h-5 w-5 translate-x-0 items-center justify-center rounded-full bg-white text-[11px] shadow-sm transition-transform dark:translate-x-5"
+            >
+              <i class="fa-solid fa-sun"></i>
+            </span>
+          </button>
+
+          <a
+            href="/contact"
+            class="rounded-full bg-purple-600 px-4 py-2 text-[10px] font-semibold text-white transition hover:bg-purple-700"
+          >
+            Let's Talk
+          </a>
+
+          <!-- Hamburger (mobile) -->
+          <button
+            id="menuToggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            class="flex h-7 w-7 flex-col items-center justify-center gap-[5px] rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 md:hidden"
+          >
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+            <span class="h-[2px] w-4 rounded-full bg-slate-900 dark:bg-white"></span>
+          </button>
+
+        </div>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="mt-3 hidden rounded-[24px] border border-slate-100 bg-white/95 p-3 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-[#1b1824]/95 md:hidden"
+      >
+        <div class="flex flex-col gap-1">
+          <a href="/" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Home</a>
+          <a href="/about" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">About</a>
+          <a href="/work" class="rounded-full bg-purple-50 px-4 py-2.5 text-xs font-medium text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">Work</a>
+          <a href="/resume" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Resume</a>
+          <a href="/contact" class="rounded-full px-4 py-2.5 text-xs font-medium text-slate-500 transition hover:bg-slate-50 hover:text-purple-600 dark:text-slate-400 dark:hover:bg-white/5 dark:hover:text-purple-400">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main data-testid="not-found">
+    <section class="bg-[#eee9ff] pb-12 pt-28 dark:bg-[#211d2d]">
+      <div class="container-site">
+
+        <p class="text-[9px] font-bold uppercase tracking-[0.2em] text-purple-600">
+          404 &middot; Page not found
+        </p>
+
+        <div class="mt-8 grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr]">
+
+          <div>
+            <h1 class="mt-3 max-w-md text-3xl font-extrabold leading-tight sm:text-4xl">
+              That page took a wrong turn.
+            </h1>
+
+            <p class="mt-4 max-w-md text-xs leading-6 text-slate-600 dark:text-slate-300">
+              The link may be outdated, or the project may no longer be available.
+              You can head back home or browse selected work.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/"
+                class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-5 py-2.5 text-xs font-semibold text-white transition hover:bg-purple-700"
+              >
+                <i class="fa-solid fa-house text-[10px]"></i>
+                Back home
+              </a>
+
+              <a
+                href="/work"
+                class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-5 py-2.5 text-xs font-semibold text-slate-600 transition hover:border-purple-200 dark:border-slate-700 dark:text-slate-300"
+              >
+                <i class="fa-solid fa-briefcase text-[10px]"></i>
+                View projects
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-white p-6 shadow-lg dark:bg-[#1b1824]">
+            <div class="flex items-center justify-center">
+              <span class="text-3xl font-extrabold text-purple-600">404</span>
+            </div>
+            <p class="mt-2 text-center text-[10px] text-slate-500 dark:text-slate-400">
+              Lost? Try the navigation above.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#5420ff] py-10 text-white">
+    <div class="container-site">
+      <div class="mt-10 border-t border-white/10 pt-5 text-[9px] text-white/50">
+        &copy; 2026 Bayo Abdulai Badmus. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/theme.js"></script>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

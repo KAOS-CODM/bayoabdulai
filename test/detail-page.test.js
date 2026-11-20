@@ -254,10 +254,12 @@ describe('Dynamic project detail pages', { skip }, () => {
     assert.ok(body.includes('&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;'), 'escaped form present');
   });
 
-  it('returns the uniform site 404 for an unknown slug', async () => {
+  it('returns the uniform styled 404 for an unknown slug', async () => {
     const res = await fetch(`${base}/projects/no-such-project`);
     assert.equal(res.status, 404);
-    assert.match(await res.text(), /Page not found/);
+    const body = await res.text();
+    assert.match(body, /data-testid="not-found"/);
+    assert.match(body, /Page not found/);
   });
 
   it('returns the identical 404 for Draft projects (no existence leak)', async () => {
@@ -267,15 +269,18 @@ describe('Dynamic project detail pages', { skip }, () => {
     const unknownBody = await unknown.text();
     const draftBody = await draft.text();
     assert.equal(draftBody, unknownBody, 'draft response is byte-identical to unknown slug');
+    assert.match(draftBody, /data-testid="not-found"/);
     assert.ok(!draftBody.includes('Draft Fixture Project'));
     assert.ok(!draftBody.includes('Secret Plan'));
   });
 
-  it('returns the identical 404 for Archived projects', async () => {
+  it('returns the identical styled 404 for Archived projects', async () => {
     const unknown = await fetch(`${base}/projects/no-such-project`);
     const archived = await fetch(`${base}/projects/fixture-archived`);
     assert.equal(archived.status, 404);
-    assert.equal(await archived.text(), await unknown.text());
+    const archivedBody = await archived.text();
+    assert.equal(archivedBody, await unknown.text());
+    assert.match(archivedBody, /data-testid="not-found"/);
   });
 
   it('public output is byte-identical to the shared renderer output', async () => {
@@ -323,6 +328,7 @@ describe('Dynamic project detail pages', { skip }, () => {
   it('404s preview for unknown slugs even when authenticated', async () => {
     const res = await fetch(`${base}/admin/preview/no-such-project`, { headers: { cookie: cookieHeader(jar) } });
     assert.equal(res.status, 404);
+    assert.match(await res.text(), /data-testid="not-found"/);
   });
 
   it('returns a safe HTML 500 when the database query fails', async () => {

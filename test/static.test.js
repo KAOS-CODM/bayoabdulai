@@ -59,7 +59,7 @@ describe('Existing website is served unchanged', { skip }, () => {
   });
 
   it('serves static assets (logo, built CSS, theme JS)', async () => {
-    for (const asset of ['/assets/images/bayo-mark.svg', '/dist/output.css', '/js/theme.js']) {
+    for (const asset of ['/assets/images/bayo-mark.svg', '/dist/output.css', '/js/theme.js', '/404.html']) {
       const res = await fetch(`${base}${asset}`);
       assert.equal(res.status, 200, `${asset} should be reachable`);
     }
@@ -68,12 +68,16 @@ describe('Existing website is served unchanged', { skip }, () => {
   it('project route 404s for slugs with no published database record', async () => {
     const res = await fetch(`${base}/projects/fast-food-delivery-app`);
     assert.equal(res.status, 404);
+    assert.match(await res.text(), /data-testid="not-found"/);
   });
 
-  it('unknown pages return a friendly 404 page', async () => {
+  it('unknown pages return the styled 404 page', async () => {
     const res = await fetch(`${base}/no-such-page`);
     assert.equal(res.status, 404);
-    assert.match(await res.text(), /Page not found/);
+    const body = await res.text();
+    assert.match(body, /data-testid="not-found"/);
+    assert.match(body, /Page not found/);
+    assert.match(body, /href="\/work"/);
   });
 
   it('sends security headers and hides the framework', async () => {

@@ -1,3 +1,5 @@
+import { API_BASE, previewPageUrl } from './api.js';
+
 /* Admin SPA: login, dashboard, projects list, project editor (7 areas),
    media library, settings. Uses only component classes defined in admin.html. */
 'use strict';
@@ -40,19 +42,8 @@ const ROW_TEMPLATES = {
 // API client
 // ---------------------------------------------------------------------------
 
-// ---------------------------------------------------------------------------
-// API base URL – same auto-detection as api.js, kept consistent sitewide.
-// ---------------------------------------------------------------------------
-const API_BASE = (() => {
-  if (typeof window === 'undefined') {
-    return '';
-  }
-  const hostname = window.location.hostname;
-  if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') {
-    return '';
-  }
-  return 'https://bayoabdulai-api-j3t8.onrender.com';
-})();
+// API_BASE is shared with api.js so every API request and backend page link
+// resolves against the same origin (root-relative locally, backend in production).
 
 // The bayo_csrf cookie is set by the backend on the api origin;
 // it is not accessible to frontend JS on the different onrender.com origin.
@@ -731,7 +722,7 @@ function reviewHtml(p) {
     btns.push(`<button class="btn btn-success" data-act="ed-restore">Restore to draft</button>`);
   }
   if (p.status !== 'archived') btns.push(`<button class="btn" data-act="ed-archive">Archive</button>`);
-  if (p.slug) btns.push(`<a class="btn" href="/admin/preview/${encodeURIComponent(p.slug)}" target="_blank" rel="noopener">Preview</a>`);
+  if (p.slug) btns.push(`<a class="btn" href="${previewPageUrl(p.slug)}" target="_blank" rel="noopener">Preview</a>`);
   if (p.id) btns.push(`<button class="btn btn-danger" data-act="ed-delete">Delete permanently</button>`);
 
   return `

@@ -36,11 +36,13 @@ describe('API foundation', { skip }, () => {
   });
 
   it('unknown API routes return the JSON error envelope', async () => {
-    const res = await fetch(`${base}/api/v1/definitely-not-a-route`);
-    assert.equal(res.status, 404);
-    const body = await res.json();
-    assert.equal(body.ok, false);
-    assert.equal(body.error.code, 'NOT_FOUND');
+    for (const path of ['/api', '/api/v1/definitely-not-a-route']) {
+      const res = await fetch(`${base}${path}`);
+      assert.equal(res.status, 404, path);
+      const body = await res.json();
+      assert.equal(body.ok, false, path);
+      assert.equal(body.error.code, 'NOT_FOUND', path);
+    }
   });
 
   it('JSON body limit rejects oversized payloads with 413', async () => {

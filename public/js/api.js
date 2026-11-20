@@ -11,7 +11,7 @@
  * - Render production: absolute URL of the backend service.
  * Evaluated at module load time. Falls back to explicit Render URL if auto-detection fails.
  */
-const API_BASE = (() => {
+export const API_BASE = (() => {
   if (typeof window === 'undefined') {
     // Server-side (Node test environment) – use relative so tests work regardless of origin.
     return '';
@@ -183,12 +183,23 @@ export function buildSlug(title) {
 }
 
 /**
- * Creates a safe URL for a project detail page.
+ * Creates a safe, backend-aware URL for a project detail page.
+ * Local development stays root-relative; deployed sites use the backend origin.
  * @param {string} slug
  * @returns {string}
  */
 export function detailPageUrl(slug) {
-  return `/projects/${slug}`;
+  return `${API_BASE}/projects/${encodeURIComponent(String(slug ?? ''))}`;
+}
+
+/**
+ * Creates a safe URL for an authenticated admin project preview.
+ * Local development stays root-relative; deployed sites use the backend origin.
+ * @param {string} slug
+ * @returns {string}
+ */
+export function previewPageUrl(slug) {
+  return `${API_BASE}/admin/preview/${encodeURIComponent(String(slug ?? ''))}`;
 }
 
 /**
@@ -230,7 +241,7 @@ export function createProjectCard(proj) {
   const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const safeSlug = slugRegex.test(slug) ? slug : buildSlug(proj.title || "");
 
-  a.href = `/projects/${safeSlug}`;
+  a.href = detailPageUrl(safeSlug);
   a.className = "group block rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:border-purple-200 hover:shadow-md dark:border-slate-800 dark:bg-[#1b1824]";
 
   // Image container
