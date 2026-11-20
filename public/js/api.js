@@ -183,13 +183,13 @@ export function buildSlug(title) {
 }
 
 /**
- * Creates a safe, backend-aware URL for a project detail page.
- * Local development stays root-relative; deployed sites use the backend origin.
+ * Creates a frontend-relative URL for a public project detail page.
+ * The Static Site rewrite forwards /projects/:slug to the backend in production.
  * @param {string} slug
  * @returns {string}
  */
 export function detailPageUrl(slug) {
-  return `${API_BASE}/projects/${encodeURIComponent(String(slug ?? ''))}`;
+  return `/projects/${encodeURIComponent(slug)}`;
 }
 
 /**

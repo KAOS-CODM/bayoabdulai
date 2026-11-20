@@ -32,17 +32,19 @@ async function loadApi(hostname, tag) {
   return import(`${apiModuleUrl}?test=${encodeURIComponent(tag)}`);
 }
 
-describe('frontend backend-aware page URLs', () => {
+describe('frontend page URL helpers', () => {
   it('exports API_BASE and keeps localhost detail URLs root-relative', async () => {
     const { API_BASE, detailPageUrl } = await loadApi('localhost', 'localhost-detail');
     assert.equal(API_BASE, '');
     assert.equal(detailPageUrl('portfolio-website'), '/projects/portfolio-website');
   });
 
-  it('uses the backend origin for production detail URLs', async () => {
+  it('keeps production detail URLs frontend-relative while API_BASE points at the backend', async () => {
     const { API_BASE, detailPageUrl } = await loadApi('bayoabdulai.onrender.com', 'prod-detail');
     assert.equal(API_BASE, BACKEND);
-    assert.equal(detailPageUrl('portfolio-website'), `${BACKEND}/projects/portfolio-website`);
+    const url = detailPageUrl('portfolio-website');
+    assert.equal(url, '/projects/portfolio-website');
+    assert.ok(!url.startsWith(BACKEND), 'detail URL must not use the backend origin');
   });
 
   it('keeps localhost preview URLs root-relative', async () => {
@@ -57,18 +59,19 @@ describe('frontend backend-aware page URLs', () => {
 
   it('encodes slugs safely in both URL helpers', async () => {
     const { detailPageUrl, previewPageUrl } = await loadApi('bayoabdulai.onrender.com', 'encoding');
-    assert.equal(detailPageUrl('a b/c'), `${BACKEND}/projects/a%20b%2Fc`);
+    assert.equal(detailPageUrl('a b/c'), '/projects/a%20b%2Fc');
     assert.equal(previewPageUrl('a b/c'), `${BACKEND}/admin/preview/a%20b%2Fc`);
   });
 
-  it('project cards use the generated detail URL', async () => {
+  it('project cards use the frontend-relative detail URL', async () => {
     const { createProjectCard } = await loadApi('bayoabdulai.onrender.com', 'card');
     const card = createProjectCard({
       title: 'Portfolio Website',
       slug: 'portfolio-website',
       category: 'Web Design',
     });
-    assert.equal(card.href, `${BACKEND}/projects/portfolio-website`);
+    assert.equal(card.href, '/projects/portfolio-website');
+    assert.ok(!card.href.startsWith(BACKEND), 'card link must stay on the frontend origin');
   });
 });
 
