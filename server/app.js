@@ -60,7 +60,7 @@ export function createApp(config) {
         styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
         imgSrc: ["'self'", 'data:', 'https://res.cloudinary.com', 'https://images.unsplash.com'],
-        connectSrc: ["'self'", 'https://bayoabdulai-api.onrender.com'],
+        connectSrc: ["'self'", 'https://bayoabdulai-api.onrender.com', 'https://bayoabdulai-api-j3t8.onrender.com'],
         objectSrc: ["'none'"],
         baseUri: ["'self'"],
         formAction: ["'self'"],

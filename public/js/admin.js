@@ -51,7 +51,7 @@ const API_BASE = (() => {
   if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') {
     return '';
   }
-  return 'https://bayoabdulai-api.onrender.com';
+  return 'https://bayoabdulai-api-j3t8.onrender.com';
 })();
 
 // The bayo_csrf cookie is set by the backend on the api origin;

@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - **Frontend-to-Backend Render Integration** (this commit)
   - Configured `API_BASE` auto-detection in `public/js/api.js` and `public/js/admin.js`:
     - Localhost: relative URLs for local development
-    - Render production: `https://bayoabdulai-api.onrender.com`
+    - Render production: `https://bayoabdulai-api-j3t8.onrender.com`
   - All API requests now target the backend service:
     - `fetchFeaturedProjects()`, `fetchPublishedProjects()`, `fetchAllPublishedProjects()`, `fetchCategories()`
     - Admin login, session persistence, CSRF-protected CRUD operations
@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
     - Credentialed access only (no wildcard origins with credentials)
     - OPTIONS preflight handled before session/auth middleware
     - `Vary: Origin` header included
-  - Helmet CSP updated: `connectSrc` now permits `https://bayoabdulai-api.onrender.com`
+  - Helmet CSP updated: `connectSrc` now permits `https://bayoabdulai-api-j3t8.onrender.com`
   - Environment-aware API base works sitewide: local dev and deployed Render
 
 ### Changed
@@ -41,14 +41,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Exposes `x-csrf-token` header to frontend
   - `Vary: Origin` header for cache correctness
   - OPTIONS preflight completed immediately before session/auth middleware
-  - Helmet CSP: added `https://bayoabdulai-api.onrender.com` to `connectSrc` directive
+  - Helmet CSP: added `https://bayoabdulai-api-j3t8.onrender.com` to `connectSrc` directive
 - `public/js/theme.js`, `public/js/admin.js`, `public/js/nav.js` — No functional changes; preserved as-is
 
 ### Fixed
-- **Cross-origin CSRF token accessibility**: The `bayo_csrf` cookie set by the backend on the API origin (`https://bayoabdulai-api.onrender.com`) is not readable by frontend JavaScript on the different frontend origin (`https://bayoabdulai.onrender.com`). Fixed by mirroring the token into `localStorage` after login, providing a safe mechanism that persists across page reloads and new admin sessions without weakening CSRF validation or broadening cookie domain.
+- **Cross-origin CSRF token accessibility**: The `bayo_csrf` cookie set by the backend on the API origin (`https://bayoabdulai-api-j3t8.onrender.com`) is not readable by frontend JavaScript on the different frontend origin (`https://bayoabdulai.onrender.com`). Fixed by mirroring the token into `localStorage` after login, providing a safe mechanism that persists across page reloads and new admin sessions without weakening CSRF validation or broadening cookie domain.
 - **API requests hitting frontend instead of backend**: All relative `/api/v1/...` requests from the frontend now resolve against the correct backend service URL via the `API_BASE` constant.
 - **CORS preflight before session middleware**: OPTIONS preflight requests are now handled immediately by the new CORS middleware, before session/auth middleware runs, preventing 401/403 errors on preflight checks.
-- **Backend connections blocked by CSP**: Helmet CSP `connectSrc` now permits connections to `https://bayoabdulai-api.onrender.com`, allowing frontend fetch requests with `credentials: 'include'` to reach the backend API.
+- **Backend connections blocked by CSP**: Helmet CSP `connectSrc` now permits connections to `https://bayoabdulai-api-j3t8.onrender.com`, allowing frontend fetch requests with `credentials: 'include'` to reach the backend API.
 
 ### Security
 - No wildcard CORS origins with credentials (specific origin only)
