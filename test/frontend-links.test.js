@@ -7,7 +7,7 @@ const apiModuleUrl = new URL('public/js/api.js', ROOT).href;
 const adminSource = readFileSync(new URL('public/js/admin.js', ROOT), 'utf8');
 const adminHtml = readFileSync(new URL('public/admin.html', ROOT), 'utf8');
 
-const BACKEND = 'https://bayoabdulai-api-j3t8.onrender.com';
+const BACKEND = 'https://bayoabdulai-api-0oxj.onrender.com';
 
 function stubDom() {
   const makeElement = () => ({

@@ -23,7 +23,7 @@ export const API_BASE = (() => {
   }
   // For any non-local hostname (including Render production), use explicit backend URL.
   // This ensures it works even if window.location.hostname isn't what we expect.
-  return 'https://bayoabdulai-api-j3t8.onrender.com';
+  return 'https://bayoabdulai-api-0oxj.onrender.com';
 })();
 
 /**
